@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Firebase/Firebase.h"
+#import "ChallengesView.h"
 @interface AppDelegate ()
 
 @end
@@ -20,9 +21,9 @@
     if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        UIViewController * challengesViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
         
-        UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-        self.window.rootViewController = viewController;
+        self.window.rootViewController = challengesViewController;
         
     }
     return YES;
