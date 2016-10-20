@@ -38,14 +38,12 @@
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     
-    DrinkingDetailsView *vc =[storyBoard instantiateViewControllerWithIdentifier:@"DrinkingController"];
-  //  BreakfastDetailsView *bvc = [storyBoard instantiateViewControllerWithIdentifier:@"EatingController"];
-//    UIViewController *vc1 = [storyBoard instantiateViewControllerWithIdentifier:@"ChallengesController" ];
+
     SlideViewController *menuController=[storyBoard instantiateViewControllerWithIdentifier:@"tableView"];
     CalendarViewController *calendarController=[storyBoard instantiateViewControllerWithIdentifier:@"Calendar"];
     SignIn *sign=[storyBoard instantiateViewControllerWithIdentifier:@"Login"];
     menuController = [menuController initWithViewControllers:@[self,calendarController,sign]
-                                               andMenuTitles:@[@"Username", @"Calendar",@"Signout"]];
+                                               andMenuTitles:@[[[NSUserDefaults standardUserDefaults]objectForKey:@"UserName"], @"Calendar",@"Signout"]];
     
     
     self.window.rootViewController = menuController;

@@ -40,6 +40,8 @@
                            @"emailID" : _usernameTextField.text,
                            @"password" : _passwordTextField.text
                            };
+    NSString *username = [[_usernameTextField.text componentsSeparatedByString:@"@"] objectAtIndex:0];
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     [connectionHandler signInWithData:user];
