@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *joinButton;
 @property (strong,nonatomic) NSDictionary *challenges;
 @property (weak, nonatomic) NSString *challengeCellTitle;
-@property UIWindow * window;
 @property UIView *menuView;
 
 
@@ -27,7 +26,6 @@
 @property NSString *EventName;
 
 - (IBAction)join:(id)sender;
-- (IBAction)options:(id)sender;
 
 - (void) challengesRecieved:(NSDictionary *)challenges;
 

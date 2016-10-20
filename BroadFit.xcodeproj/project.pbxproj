@@ -133,6 +133,7 @@
 			children = (
 				6CCCE0261DA24CEA001ACB9E /* AppDelegate.h */,
 				6CCCE0271DA24CEA001ACB9E /* AppDelegate.m */,
+				906418AB1DB8D40A00E40101 /* Model */,
 				90F58BF41DA768EF005454BD /* Controllers */,
 				90F58BF01DA768AF005454BD /* Connection Handler */,
 				6CCCE02C1DA24CEA001ACB9E /* Main.storyboard */,
@@ -154,6 +155,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		906418AB1DB8D40A00E40101 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90F58BF51DA76ED2005454BD /* Protocol.h */,
+				90F58BF61DA79D60005454BD /* TableCell.h */,
+				90F58BF71DA79D60005454BD /* TableCell.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		90F58BF01DA768AF005454BD /* Connection Handler */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,11 +177,8 @@
 		90F58BF41DA768EF005454BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				90F58BF51DA76ED2005454BD /* Protocol.h */,
 				6C63BD2E1DA4F4C100C5C675 /* SignUp.h */,
 				6C63BD2F1DA4F4C100C5C675 /* SignUp.m */,
-				90F58BF61DA79D60005454BD /* TableCell.h */,
-				90F58BF71DA79D60005454BD /* TableCell.m */,
 				6C63BD311DA4F4D600C5C675 /* SignIn.h */,
 				6C63BD321DA4F4D600C5C675 /* SignIn.m */,
 				903D80F41DB64E400055A25A /* SlideViewController.h */,

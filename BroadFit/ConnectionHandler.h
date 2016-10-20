@@ -27,6 +27,7 @@
 - (void) fetchMyChallenges:(NSString *)userID;
 - (void) storeToFirebase:(NSDictionary *)walkingDetails;
 - (void)updateChallengeDetails:(NSString*)challengeName and:(NSArray*)detailName with:(NSArray*)detailValues;
+- (void)incrementNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName;
 
 
 

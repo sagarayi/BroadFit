@@ -117,7 +117,13 @@
     _individualChallengeSelected = [keys objectAtIndex:indexPath.row];
     NSString *imageName = [ NSString stringWithFormat:@"%@",[[_challenges objectForKey:_individualChallengeSelected] objectForKey:@"image"]];
     _challengeCellImage.image = [UIImage imageNamed:imageName];
+    static NSString *cellIdentifier = @"tableCell";
+    TableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
+    // Create cell if it is nil
+    if (cell == nil) {
+        cell = [[TableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
     // Join a challenge
    
     NSString *userID = [[NSUserDefaults standardUserDefaults]valueForKey:@"userID"];
@@ -133,6 +139,7 @@
         
         if(snapshot.value != NULL && ![snapshot.value isKindOfClass:[NSNull class]]&& snapshot.value[_individualChallengeSelected] != NULL && ![data isKindOfClass:[NSNull class]]){
             
+                cell.numberOfParticipants.text = [NSString stringWithFormat:@"%d" ,([cell.numberOfParticipants.text intValue]+1)];
                     [_joinButton setTitle:@"Joined" forState:UIControlStateNormal];
 
                     }else{
@@ -143,10 +150,6 @@
 
 }
 
-- (IBAction)options:(id)sender {
-    
-    
-}
 - (IBAction)join:(id)sender {
     
    
@@ -161,6 +164,7 @@
         ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
         NSString *userID = [[NSUserDefaults standardUserDefaults]valueForKey:@"userID"];
         [connectionHandler joinChallenge:_individualChallengeSelected forUser:userID];
+        [connectionHandler incrementNumberOfParticipants:@"Event1" has:_individualChallengeSelected];
     }}
 
 

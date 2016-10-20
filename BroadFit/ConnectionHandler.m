@@ -102,27 +102,8 @@ static ConnectionHandler *instance;
     }];
     
 }
-//
-//-(void)fetchUserChallengeDetails:(NSString *)currentDate with:(NSString*)userID and:(NSDictionary*)challengeNames
-//{
-//    FIRDatabaseReference *reference=[[FIRDatabase database]reference];
-//    __block NSDictionary * mainDictionary=[NSDictionary new];
-//    NSArray *keys=[challengeNames allKeys];
-//    for(NSString* name in keys)
-//    {
-//        reference= [[[[[reference child:@"Users"]child:userID]child:@"challenges enrolled"]child:name]child:currentDate];
-//        FIRDatabaseQuery * query=[reference queryOrderedByChild:currentDate];
-//        [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
-//            NSDictionary* details=snapshot.value;
-//            [mainDictionary setValue:details forKey:name];
-//        }
-//         ];
-//    }
-//    if(self.delegate && [self.delegate respondsToSelector:@selector(didFetchDetails:)])
-//    {
-//        [self.delegate didFetchDetails:mainDictionary];
-//    }
-//}
+
+
 
 - (void) storeToFirebase:(NSDictionary *)walkingDetails{
     
@@ -157,4 +138,21 @@ static ConnectionHandler *instance;
     
 }
 
+-(void)incrementNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName
+{
+    FIRDatabaseReference *reference=[[[[[[[FIRDatabase database]reference] child:@"Events"]child:@"Event1"]child:@"Challenges"]child:challengeName]child:@"Participants"];
+    FIRDatabaseQuery *query=[reference queryOrderedByKey];
+     __block NSString *numberOfParticipants;
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
+    {
+        if(![snapshot.value isKindOfClass:[NSNull class]] && snapshot.value != NULL){
+      
+             numberOfParticipants = snapshot.value;
+           
+        }
+    }];
+    
+    numberOfParticipants=[NSString stringWithFormat:@"%ld",[numberOfParticipants integerValue]+1];
+    [reference setValue:numberOfParticipants];
+}
 @end
