@@ -19,6 +19,7 @@
 @property (strong,nonatomic) NSDictionary *challenges;
 @property (weak, nonatomic) NSString *challengeCellTitle;
 @property UIWindow * window;
+@property UIView *menuView;
 
 
 @property UIActivityIndicatorView *activityIndicator;

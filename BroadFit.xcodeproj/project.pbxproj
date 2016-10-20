@@ -24,6 +24,7 @@
 		9020C1761DB4F31E009110C9 /* SleepDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020C1751DB4F31E009110C9 /* SleepDetails.m */; };
 		903D80F61DB64E400055A25A /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 903D80F51DB64E400055A25A /* SlideViewController.m */; };
 		906418A71DB89C5800E40101 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 906418A61DB89C5800E40101 /* CalendarViewController.m */; };
+		906418AA1DB8A74400E40101 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 906418A91DB8A74400E40101 /* TabBarController.m */; };
 		907E96941DB0D17B005573AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907E96931DB0D17B005573AC /* CoreLocation.framework */; };
 		909AB0D21DAF875200DA2B1D /* UserChallenges.m in Sources */ = {isa = PBXBuildFile; fileRef = 909AB0D11DAF875200DA2B1D /* UserChallenges.m */; };
 		90F58BEF1DA7631C005454BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F58BEE1DA7631C005454BD /* GoogleService-Info.plist */; };
@@ -63,6 +64,8 @@
 		903D80F51DB64E400055A25A /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
 		906418A51DB89C5800E40101 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		906418A61DB89C5800E40101 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		906418A81DB8A74400E40101 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		906418A91DB8A74400E40101 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		907E96931DB0D17B005573AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		909AB0D01DAF875200DA2B1D /* UserChallenges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserChallenges.h; sourceTree = "<group>"; };
 		909AB0D11DAF875200DA2B1D /* UserChallenges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserChallenges.m; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				903D80F51DB64E400055A25A /* SlideViewController.m */,
 				6C63BD341DA4F50300C5C675 /* ChallengesView.h */,
 				6C63BD351DA4F50300C5C675 /* ChallengesView.m */,
+				906418A81DB8A74400E40101 /* TabBarController.h */,
+				906418A91DB8A74400E40101 /* TabBarController.m */,
 				9020C1741DB4F31E009110C9 /* SleepDetails.h */,
 				9020C1751DB4F31E009110C9 /* SleepDetails.m */,
 				906418A51DB89C5800E40101 /* CalendarViewController.h */,
@@ -326,6 +331,7 @@
 				6CCCE0251DA24CEA001ACB9E /* main.m in Sources */,
 				6C63BD331DA4F4D600C5C675 /* SignIn.m in Sources */,
 				6C63BD3C1DA4F54600C5C675 /* DrinkingDetailsView.m in Sources */,
+				906418AA1DB8A74400E40101 /* TabBarController.m in Sources */,
 				906418A71DB89C5800E40101 /* CalendarViewController.m in Sources */,
 				6C63BD421DA4F58C00C5C675 /* BreakfastDetailsView.m in Sources */,
 			);

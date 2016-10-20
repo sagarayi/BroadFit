@@ -10,6 +10,7 @@
 #import "SlideViewController.h"
 #import "CalendarViewController.h"
 #import "SignIn.h"
+#import "TabBarController.h"
 @interface ChallengesView ()
 
 @end
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    
     //FETCH ALL CHALLENGES
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
@@ -33,22 +34,6 @@
     [_activityIndicator startAnimating];
     [self.view addSubview:_activityIndicator];
     
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    
-
-    SlideViewController *menuController=[storyBoard instantiateViewControllerWithIdentifier:@"tableView"];
-    CalendarViewController *calendarController=[storyBoard instantiateViewControllerWithIdentifier:@"Calendar"];
-    SignIn *sign=[storyBoard instantiateViewControllerWithIdentifier:@"Login"];
-    menuController = [menuController initWithViewControllers:@[self,calendarController,sign]
-                                               andMenuTitles:@[[[NSUserDefaults standardUserDefaults]objectForKey:@"UserName"], @"Calendar",@"Signout"]];
-    
-    
-    self.window.rootViewController = menuController;
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     
 }
 

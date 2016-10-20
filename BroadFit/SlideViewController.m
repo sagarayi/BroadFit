@@ -190,6 +190,10 @@
         {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMenuCellID];
         }
+    if([self.menuTitles[indexPath.row] isEqualToString:@"SignOut"]){
+        
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"UserName"];
+    }
     cell.textLabel.text = self.menuTitles[indexPath.row];
     return cell;
 }

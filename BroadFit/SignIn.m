@@ -8,6 +8,7 @@
 
 #import "SignIn.h"
 #import "TabBarViewController.h"
+#import "CalendarViewController.h"
 @interface SignIn ()
 
 @end
@@ -17,13 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
-    {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-        [self presentViewController:viewController animated:YES completion:nil];
-
-    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,8 +35,7 @@
                            @"emailID" : _usernameTextField.text,
                            @"password" : _passwordTextField.text
                            };
-    NSString *username = [[_usernameTextField.text componentsSeparatedByString:@"@"] objectAtIndex:0];
-    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
+    
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     [connectionHandler signInWithData:user];
@@ -77,7 +71,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:userID forKey:@"userID"];
     [defaults synchronize];
- 
+    NSString *username = [[_usernameTextField.text componentsSeparatedByString:@"@"] objectAtIndex:0];
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
     UIAlertController *alert = [UIAlertController
                                 alertControllerWithTitle:@"LOGIN SUCCESSFULL"
                                 message:@"WELCOME"
