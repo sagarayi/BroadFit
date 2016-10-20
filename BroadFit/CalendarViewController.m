@@ -30,7 +30,7 @@
 
 -(void)datePickerChanged
 {
-        NSString * uid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userID"];
+    NSString * uid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userID"];
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 1.0;
     _activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
@@ -55,9 +55,9 @@
                                 handler:^(UIAlertAction *action)
                                 {
                                     [alert dismissViewControllerAnimated:YES completion:nil];
-//                                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-//                                    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-//                                    [self presentViewController:viewController animated:YES completion:nil];
+                                    //                                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+                                    //                                    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
+                                    //                                    [self presentViewController:viewController animated:YES completion:nil];
                                 }];
         [alert addAction:addOK];
         [self presentViewController:alert animated:YES completion:nil];
@@ -69,10 +69,12 @@
         NSString * currentDate=[formatter stringFromDate:_datePicker.date];
         _names = [[challenges objectForKey:@"challenges enrolled"]allKeys];
         for( NSString* challenge in _names){
-            if([[[challenges objectForKey:@"challenges enrolled" ] objectForKey:challenge]objectForKey:currentDate] != nil)
-             [_details setObject:[[[challenges objectForKey:@"challenges enrolled"]objectForKey:challenge]objectForKey:currentDate] forKey:challenge];
             
-            
+            NSDictionary *currentDateItems = [[[challenges objectForKey:@"challenges enrolled" ] objectForKey:challenge]objectForKey:currentDate];
+            if( currentDateItems!= nil)
+            {
+                [_details setObject:[[[challenges objectForKey:@"challenges enrolled"]objectForKey:challenge]objectForKey:currentDate] forKey:challenge];
+            }
         }
         if([_details  count]== 0)
         {
@@ -80,32 +82,32 @@
                                         alertControllerWithTitle:@"NO EVENTS ON"
                                         message:[NSString stringWithFormat:@"%@ ",currentDate]
                                         preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *addOK = [UIAlertAction
-                                actionWithTitle:@"OK"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction *action)
-                                {
-                                    [alert dismissViewControllerAnimated:YES completion:nil];
-                                    //                                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-                                    //                                    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                    //                                    [self presentViewController:viewController animated:YES completion:nil];
-                                }];
-        [alert addAction:addOK];
-        [self presentViewController:alert animated:YES completion:nil];
-    }
-    else
-    {
-        [_detailTable reloadData];
-    }
-//        ConnectionHandler * connection=[ConnectionHandler new];
-//        connection.delegate=self;
-//        NSString * uid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userID"];
-//        [connection fetchUserChallengeDetails:currentDate with:uid and:challenges];
+            UIAlertAction *addOK = [UIAlertAction
+                                    actionWithTitle:@"OK"
+                                    style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction *action)
+                                    {
+                                        [alert dismissViewControllerAnimated:YES completion:nil];
+                                        //                                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+                                        //                                    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
+                                        //                                    [self presentViewController:viewController animated:YES completion:nil];
+                                    }];
+            [alert addAction:addOK];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else
+        {
+            [_detailTable reloadData];
+        }
+        //        ConnectionHandler * connection=[ConnectionHandler new];
+        //        connection.delegate=self;
+        //        NSString * uid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userID"];
+        //        [connection fetchUserChallengeDetails:currentDate with:uid and:challenges];
         [_activityIndicator stopAnimating];
         
     }
     
-
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -116,7 +118,7 @@
 {
     NSString *sectionTitle = [_names objectAtIndex:section];
     NSArray *sectionDetails = [_details objectForKey:sectionTitle];
-    return [sectionDetails count]; 
+    return [sectionDetails count];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -132,32 +134,56 @@
     static NSString *cellIdentifier = @"detailCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if (cell == nil) 
+    if (cell == nil)
         cell = [[TableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    if(indexPath.row < ([_names count]-1)){
-        NSLog(@"%ld",(long)indexPath.row);
-       // NSDictionary * individualChallenge=[_details objectForKey:[_names objectAtIndex:indexPath.row]];
-        //NSArray *detailKeys = [individualChallenge allKeys];
-//        for(int i=0;i<[individualChallenge count];i++)
-//        {
-            //cell.textLabel.text= [NSString stringWithFormat:@"%@:%@",detailKeys[indexPath.row],[individualChallenge valueForKey:detailKeys[indexPath.row]]];
-//        }
-//    NSString *sectionTitle = [_names objectAtIndex:indexPath.section];
-//    NSArray *sectionDetails = [_details objectForKey:sectionTitle];
-//    NSString *detail = [sectionDetails objectAtIndex:indexPath.row];
-//    cell.textLabel.text = detail;
-//    
+    //    if(indexPath.row < ([_names count]-1)){
+    //NSLog(@"%ld",(long)indexPath.row);
+    // NSDictionary * individualChallenge=[_details objectForKey:[_names objectAtIndex:indexPath.row]];
+    //NSArray *detailKeys = [individualChallenge allKeys];
+    //        for(int i=0;i<[individualChallenge count];i++)
+    //        {
+    //cell.textLabel.text= [NSString stringWithFormat:@"%@:%@",detailKeys[indexPath.row],[individualChallenge valueForKey:detailKeys[indexPath.row]]];
+    //        }
+    NSString *sectionTitle = [_names objectAtIndex:indexPath.section];
+    NSDictionary *sectionDetails = [_details objectForKey:sectionTitle];
+    
+    NSString *detailTextValue = @"";
+    NSString *detailTextKey = @"";
+    if([sectionDetails isKindOfClass:[NSDictionary class]])
+    {
+        NSLog(@"Dict");
+        int index = 0;
+        for(id key in sectionDetails) {
+            if(index == indexPath.row)
+            {
+                detailTextValue = (NSString*)[sectionDetails objectForKey:key];
+                detailTextKey = (NSString*)[[sectionDetails allKeysForObject:detailTextValue]objectAtIndex:0];
+                break;
+            }
+            index++;
+            // do something with key and obj
+        }
+    }
+    else if([sectionDetails isKindOfClass:[NSArray class]])
+    {
+        NSLog(@"Array");
+    }
+    
+    //    NSDictionary *singleField=[[NSDictionary alloc]initWithObjectsAndKeys:sectionDetails, nil];
+    //    NSString *detail = [NSString stringWithFormat:@"%@  : %@",[sectionDetails objectAtIndex:indexPath.row],[singleField objectForKey:[sectionDetails objectAtIndex:indexPath.row]]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@",detailTextKey,detailTextValue];
+    //
     return cell;
     
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
