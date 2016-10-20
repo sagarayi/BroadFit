@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D04F62F1DB7330100A45C0E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D04F62E1DB7330100A45C0E /* CalendarViewController.m */; };
 		6B51E2D658D01A8CA9D07D3B /* libPods-BroadFit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE4DAE3D2FDA2670AC86A5E /* libPods-BroadFit.a */; };
 		6C2175FB1DA7512500EFBA4A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2175FA1DA7512500EFBA4A /* MapKit.framework */; };
 		6C63BD301DA4F4C100C5C675 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD2F1DA4F4C100C5C675 /* SignUp.m */; };
 		6C63BD331DA4F4D600C5C675 /* SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD321DA4F4D600C5C675 /* SignIn.m */; };
-		6C63BD361DA4F50300C5C675 /* AllChallengesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD351DA4F50300C5C675 /* AllChallengesViewController.m */; };
+		6C63BD361DA4F50300C5C675 /* ChallengesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD351DA4F50300C5C675 /* ChallengesView.m */; };
 		6C63BD391DA4F52800C5C675 /* WalkingDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD381DA4F52800C5C675 /* WalkingDetailsView.m */; };
 		6C63BD3C1DA4F54600C5C675 /* DrinkingDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD3B1DA4F54600C5C675 /* DrinkingDetailsView.m */; };
 		6C63BD421DA4F58C00C5C675 /* BreakfastDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD411DA4F58C00C5C675 /* BreakfastDetailsView.m */; };
@@ -24,6 +23,7 @@
 		6CCCE0361DA24CEA001ACB9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCCE0341DA24CEA001ACB9E /* LaunchScreen.storyboard */; };
 		9020C1761DB4F31E009110C9 /* SleepDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020C1751DB4F31E009110C9 /* SleepDetails.m */; };
 		903D80F61DB64E400055A25A /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 903D80F51DB64E400055A25A /* SlideViewController.m */; };
+		906418A71DB89C5800E40101 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 906418A61DB89C5800E40101 /* CalendarViewController.m */; };
 		907E96941DB0D17B005573AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907E96931DB0D17B005573AC /* CoreLocation.framework */; };
 		909AB0D21DAF875200DA2B1D /* UserChallenges.m in Sources */ = {isa = PBXBuildFile; fileRef = 909AB0D11DAF875200DA2B1D /* UserChallenges.m */; };
 		90F58BEF1DA7631C005454BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F58BEE1DA7631C005454BD /* GoogleService-Info.plist */; };
@@ -34,15 +34,13 @@
 /* Begin PBXFileReference section */
 		142C53AE0DCCBE372E2CA23A /* Pods-BroadFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BroadFit/Pods-BroadFit.release.xcconfig"; sourceTree = "<group>"; };
 		5B0B1ADAEA9E6B62DF47A5BF /* Pods-BroadFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BroadFit/Pods-BroadFit.debug.xcconfig"; sourceTree = "<group>"; };
-		5D04F62D1DB7330100A45C0E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarViewController.h; path = "../../../../../Volumes/Development/BroadFit copy/BroadFit/CalendarViewController.h"; sourceTree = "<group>"; };
-		5D04F62E1DB7330100A45C0E /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarViewController.m; path = "../../../../../Volumes/Development/BroadFit copy/BroadFit/CalendarViewController.m"; sourceTree = "<group>"; };
 		6C2175FA1DA7512500EFBA4A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6C63BD2E1DA4F4C100C5C675 /* SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUp.h; sourceTree = "<group>"; };
 		6C63BD2F1DA4F4C100C5C675 /* SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUp.m; sourceTree = "<group>"; };
 		6C63BD311DA4F4D600C5C675 /* SignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignIn.h; sourceTree = "<group>"; };
 		6C63BD321DA4F4D600C5C675 /* SignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignIn.m; sourceTree = "<group>"; };
-		6C63BD341DA4F50300C5C675 /* AllChallengesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllChallengesViewController.h; sourceTree = "<group>"; };
-		6C63BD351DA4F50300C5C675 /* AllChallengesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllChallengesViewController.m; sourceTree = "<group>"; };
+		6C63BD341DA4F50300C5C675 /* ChallengesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengesView.h; sourceTree = "<group>"; };
+		6C63BD351DA4F50300C5C675 /* ChallengesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengesView.m; sourceTree = "<group>"; };
 		6C63BD371DA4F52800C5C675 /* WalkingDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkingDetailsView.h; sourceTree = "<group>"; };
 		6C63BD381DA4F52800C5C675 /* WalkingDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkingDetailsView.m; sourceTree = "<group>"; };
 		6C63BD3A1DA4F54600C5C675 /* DrinkingDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinkingDetailsView.h; sourceTree = "<group>"; };
@@ -63,6 +61,8 @@
 		9020C1751DB4F31E009110C9 /* SleepDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepDetails.m; sourceTree = "<group>"; };
 		903D80F41DB64E400055A25A /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
 		903D80F51DB64E400055A25A /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
+		906418A51DB89C5800E40101 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		906418A61DB89C5800E40101 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		907E96931DB0D17B005573AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		909AB0D01DAF875200DA2B1D /* UserChallenges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserChallenges.h; sourceTree = "<group>"; };
 		909AB0D11DAF875200DA2B1D /* UserChallenges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserChallenges.m; sourceTree = "<group>"; };
@@ -172,10 +172,12 @@
 				903D80F41DB64E400055A25A /* SlideViewController.h */,
 				903D80F51DB64E400055A25A /* SlideViewController.m */,
 				6C63BD321DA4F4D600C5C675 /* SignIn.m */,
-				6C63BD341DA4F50300C5C675 /* AllChallengesViewController.h */,
-				6C63BD351DA4F50300C5C675 /* AllChallengesViewController.m */,
+				6C63BD341DA4F50300C5C675 /* ChallengesView.h */,
+				6C63BD351DA4F50300C5C675 /* ChallengesView.m */,
 				9020C1741DB4F31E009110C9 /* SleepDetails.h */,
 				9020C1751DB4F31E009110C9 /* SleepDetails.m */,
+				906418A51DB89C5800E40101 /* CalendarViewController.h */,
+				906418A61DB89C5800E40101 /* CalendarViewController.m */,
 				909AB0D01DAF875200DA2B1D /* UserChallenges.h */,
 				909AB0D11DAF875200DA2B1D /* UserChallenges.m */,
 				6C63BD371DA4F52800C5C675 /* WalkingDetailsView.h */,
@@ -184,8 +186,6 @@
 				6C63BD3B1DA4F54600C5C675 /* DrinkingDetailsView.m */,
 				6C63BD401DA4F58C00C5C675 /* BreakfastDetailsView.h */,
 				6C63BD411DA4F58C00C5C675 /* BreakfastDetailsView.m */,
-				5D04F62D1DB7330100A45C0E /* CalendarViewController.h */,
-				5D04F62E1DB7330100A45C0E /* CalendarViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -319,14 +319,14 @@
 				90F58BF31DA768D7005454BD /* ConnectionHandler.m in Sources */,
 				6C63BD301DA4F4C100C5C675 /* SignUp.m in Sources */,
 				909AB0D21DAF875200DA2B1D /* UserChallenges.m in Sources */,
-				6C63BD361DA4F50300C5C675 /* AllChallengesViewController.m in Sources */,
+				6C63BD361DA4F50300C5C675 /* ChallengesView.m in Sources */,
 				6CCCE0281DA24CEA001ACB9E /* AppDelegate.m in Sources */,
 				90F58BF81DA79D60005454BD /* TableCell.m in Sources */,
 				6C63BD391DA4F52800C5C675 /* WalkingDetailsView.m in Sources */,
 				6CCCE0251DA24CEA001ACB9E /* main.m in Sources */,
 				6C63BD331DA4F4D600C5C675 /* SignIn.m in Sources */,
 				6C63BD3C1DA4F54600C5C675 /* DrinkingDetailsView.m in Sources */,
-				5D04F62F1DB7330100A45C0E /* CalendarViewController.m in Sources */,
+				906418A71DB89C5800E40101 /* CalendarViewController.m in Sources */,
 				6C63BD421DA4F58C00C5C675 /* BreakfastDetailsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

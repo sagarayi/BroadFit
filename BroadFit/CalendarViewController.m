@@ -19,7 +19,7 @@
     [super viewDidLoad];
     _details=[[NSMutableDictionary alloc]init];
     
-    [self.datePicker addTarget:self action:@selector(datePickerChanged) forControlEvents:UIControlEventValueChanged];
+    //[self.datePicker addTarget:self action:@selector(datePickerChanged) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
 }
 
@@ -28,8 +28,9 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)datePickerChanged
-{
+
+- (IBAction)getChallengeDetails:(id)sender {
+    
     NSString * uid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userID"];
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 1.0;
@@ -40,7 +41,12 @@
     connection.delegate=self;
     [connection fetchMyChallenges:uid];
     
+    
+    
+    
+    
 }
+
 - (void) didFetchChallenges:(NSDictionary *)challenges
 {
     if(challenges == NULL || [challenges isKindOfClass:[NSNull class]])

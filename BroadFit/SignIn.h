@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Firebase/Firebase.h"
-#import "AllChallengesViewController.h"
+#import "ChallengesView.h"
 #import "ConnectionHandler.h"
 
 @interface SignIn : UIViewController

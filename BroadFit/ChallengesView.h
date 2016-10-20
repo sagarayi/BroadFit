@@ -10,7 +10,7 @@
 #import "ConnectionHandler.h"
 #import "TableCell.h"
 
-@interface AllChallengesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UITabBarControllerDelegate>
+@interface ChallengesView : UIViewController <UITableViewDelegate, UITableViewDataSource,UITabBarControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *challengeCellImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

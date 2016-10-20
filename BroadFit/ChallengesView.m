@@ -6,15 +6,15 @@
 //  Copyright © 2016 Broadsoft. All rights reserved.
 //
 
-#import "AllChallengesViewController.h"
+#import "ChallengesView.h"
 #import "SlideViewController.h"
 #import "CalendarViewController.h"
 #import "SignIn.h"
-@interface AllChallengesViewController ()
+@interface ChallengesView ()
 
 @end
 
-@implementation AllChallengesViewController
+@implementation ChallengesView
 - (void)viewDidLoad {
     [super viewDidLoad];
     

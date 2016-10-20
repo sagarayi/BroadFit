@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *detailTable;
 @property UIActivityIndicatorView *activityIndicator;
 @property (strong,nonatomic) NSArray *myChallenges;
+- (IBAction)getChallengeDetails:(id)sender;
 
 - (void) didFetchChallenges:(NSDictionary *)challenges;
--(void)didFetchDetails:(NSDictionary*)mainDictionary;
 @end
