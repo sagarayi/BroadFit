@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _details=[[NSMutableDictionary alloc]init];
-    
+    [self.datePicker setDatePickerMode:UIDatePickerModeDate];
     //[self.datePicker addTarget:self action:@selector(datePickerChanged) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
 }
@@ -40,8 +40,6 @@
     ConnectionHandler * connection=[[ConnectionHandler alloc]init];
     connection.delegate=self;
     [connection fetchMyChallenges:uid];
-    
-    
     
     
     
