@@ -34,12 +34,11 @@
 }
 */
 
-- (IBAction)previousDate:(id)sender {
-}
 
-- (IBAction)nextDate:(id)sender {
-}
+
 - (IBAction)no:(id)sender {
+    ConnectionHandler *handlerObject = [[ConnectionHandler alloc]init];
+    [handlerObject updateChallengeDetails:@"Eating" and:[NSArray arrayWithObjects:@"Breakfast", nil] with:[NSArray arrayWithObjects:@"NO", nil]];
 }
 
 - (IBAction)yes:(id)sender {

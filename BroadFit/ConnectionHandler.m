@@ -73,9 +73,7 @@ static ConnectionHandler *instance;
 - (void) joinChallenge:(NSString *)challenge forUser:(NSString *)userID{
     
     FIRDatabaseReference *ref = [[FIRDatabase database]reference];
-    NSDate *date = [NSDate date];
-    NSString *joinDate = [NSString stringWithFormat:@"%@",date];
-    [[[[[ref child:@"Users"] child:userID] child:@"challenges enrolled"]child:challenge] setValue:joinDate];
+    [[[[[ref child:@"Users"] child:userID] child:@"challenges enrolled"]child:challenge] setValue:@""];
     
 }
 - (void) fetchAllChallenges:(NSString *)eventName{

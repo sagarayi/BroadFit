@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
 }
@@ -24,6 +25,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 // Call the connection handler to sign the user In
 
@@ -73,24 +75,13 @@
     [defaults synchronize];
     NSString *username = [[_usernameTextField.text componentsSeparatedByString:@"@"] objectAtIndex:0];
     [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
-    UIAlertController *alert = [UIAlertController
-                                alertControllerWithTitle:@"LOGIN SUCCESSFULL"
-                                message:@"WELCOME"
-                                preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *addOK = [UIAlertAction
-                            actionWithTitle:@"OK"
-                            style:UIAlertActionStyleDefault
-                            handler:^(UIAlertAction *action) {
-                                
-                                
-                                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-                                UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                [self presentViewController:viewController animated:YES completion:nil];
-                                
-                            }];
+
     
-    [alert addAction:addOK];
-    [self presentViewController:alert animated:YES completion:nil];
+                                
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
+    [self presentViewController:viewController animated:YES completion:nil];
+
     
     
 }

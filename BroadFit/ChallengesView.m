@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     
+    self.navigationController.title = @"ALL CHALLENGES";
     //FETCH ALL CHALLENGES
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
@@ -36,7 +37,10 @@
     
     
 }
-
+- (void) viewDidAppear:(BOOL)animated{
+    
+    self.tabBarController.tabBar.hidden = NO;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

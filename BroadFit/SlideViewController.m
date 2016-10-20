@@ -45,11 +45,12 @@
             
             UIBarButtonItem *revealMenuBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(toggleMenuVisibility:)]; // (3)
             
+            
             UIViewController *topVC = ((UINavigationController *)tempVCs.lastObject).topViewController;
             topVC.navigationItem.leftBarButtonItems = [@[revealMenuBarButtonItem] arrayByAddingObjectsFromArray:topVC.navigationItem.leftBarButtonItems];
             
             
-        }
+       }
         self.viewControllers = [tempVCs copy];
         self.menu.delegate=self;
         self.menu.dataSource=self;
