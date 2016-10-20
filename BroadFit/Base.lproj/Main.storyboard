@@ -613,7 +613,8 @@
                                     <constraint firstAttribute="height" constant="667" id="rDy-CV-dOb"/>
                                 </constraints>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-93-slo">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-93-slo">
+                                <frame key="frameInset" width="1000" height="1000"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="W3H-Az-5mq"/>
                                     <constraint firstAttribute="height" constant="204" id="lmq-Xr-TIq"/>
@@ -642,7 +643,8 @@
                                     <constraint firstAttribute="width" constant="210" id="ths-HL-eaG"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-rd-ML2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-rd-ML2">
+                                <frame key="frameInset" width="1000" height="1000"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Lu5-00-ntl"/>
                                     <constraint firstAttribute="width" constant="50" id="Pir-9N-3l6"/>
@@ -661,7 +663,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeb-XW-ryv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeb-XW-ryv">
+                                <frame key="frameInset" width="1000" height="1000"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AHY-Xq-Df0"/>
                                     <constraint firstAttribute="width" constant="30" id="Mde-ea-FFd"/>
@@ -952,7 +955,11 @@
                             <constraint firstItem="4hh-h1-z7r" firstAttribute="top" secondItem="Lh3-PH-YCh" secondAttribute="top" id="DZr-ZW-Bk0"/>
                             <constraint firstItem="Lh3-PH-YCh" firstAttribute="leading" secondItem="dKL-ao-vdH" secondAttribute="leadingMargin" constant="200" id="Ep6-pX-0Gn"/>
                             <constraint firstItem="GjF-c1-MPt" firstAttribute="top" secondItem="Qky-wE-DO1" secondAttribute="bottom" constant="-20" id="Gdn-CF-8ZW"/>
+                            <constraint firstAttribute="trailing" secondItem="GjF-c1-MPt" secondAttribute="trailing" id="IDM-Oq-P9l"/>
+                            <constraint firstItem="GjF-c1-MPt" firstAttribute="top" secondItem="dKL-ao-vdH" secondAttribute="top" id="O7o-T8-QTY"/>
                             <constraint firstItem="GjF-c1-MPt" firstAttribute="leading" secondItem="dKL-ao-vdH" secondAttribute="leadingMargin" constant="-16" id="aK8-dZ-Qpt"/>
+                            <constraint firstItem="GjF-c1-MPt" firstAttribute="leading" secondItem="dKL-ao-vdH" secondAttribute="leading" id="gQq-VW-kRb"/>
+                            <constraint firstItem="oFz-No-XdX" firstAttribute="top" secondItem="GjF-c1-MPt" secondAttribute="bottom" id="qRJ-ap-eYn"/>
                             <constraint firstItem="oFz-No-XdX" firstAttribute="top" secondItem="GjF-c1-MPt" secondAttribute="bottom" id="vbW-rx-lgB"/>
                         </constraints>
                     </view>
@@ -1117,7 +1124,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xdx-ij-Z8O" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dig-QC-Ohn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dig-QC-Ohn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

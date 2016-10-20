@@ -27,7 +27,7 @@
     
     
     // UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    
+    self.window=self.view.window;
    // _menuView = [[UIView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
     SlideViewController *menuController=[storyBoard instantiateViewControllerWithIdentifier:@"tableView"];
@@ -42,11 +42,11 @@
     
 //    self.menuView.window.rootViewController = menuController;
 //    window.rootViewController = menuController;
-    [self.window setRootViewController:menuController];
+    self.view.window.rootViewController = menuController;
 
-   self.window.backgroundColor = [UIColor whiteColor];
+   self.view.window.backgroundColor = [UIColor whiteColor];
   //  [self.view addSubview:self.menuView];
-    [self.window makeKeyAndVisible];
+    [self.view.window makeKeyAndVisible];
 
 }
 

@@ -54,6 +54,15 @@
     
 }
 
+- (void) viewWillDisappear:(BOOL)animated{
+    
+    self.tabBarController.tabBar.hidden = YES;
+    [super viewWillDisappear:animated];
+}
+- (void) viewDidAppear:(BOOL)animated{
+    
+    self.tabBarController.tabBar.hidden = NO;
+}
 // Caching the images and challenge detials for further use
 
 - (void) cacheImages:(NSDictionary *)allChallenges{
@@ -156,6 +165,7 @@
         
         ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
         NSString *userID = [[NSUserDefaults standardUserDefaults]valueForKey:@"userID"];
+        [connectionHandler setNumberOfParticipants:@"Event1" has:_individualChallengeSelected];
         [connectionHandler joinChallenge:_individualChallengeSelected forUser:userID];
     }}
 
