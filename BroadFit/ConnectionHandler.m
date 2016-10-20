@@ -76,6 +76,20 @@ static ConnectionHandler *instance;
     [[[[[ref child:@"Users"] child:userID] child:@"challenges enrolled"]child:challenge] setValue:@""];
     
 }
+
+-(void)setNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName
+{
+    FIRDatabaseReference *reference=[[[[[[FIRDatabase database]reference]child:eventName]child:@"Challenges"]child:challengeName]child:@"Participants"];
+    FIRDatabaseQuery *query=[reference queryOrderedByKey];
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
+     {
+         NSString* numberOfParticipants=snapshot.value;
+         numberOfParticipants=[NSString stringWithFormat:@"%ld",[numberOfParticipants integerValue]+1];
+         [reference setValue:numberOfParticipants];
+     }];
+    
+    
+}
 - (void) fetchAllChallenges:(NSString *)eventName{
     
     FIRDatabaseReference *rootRef= [[[[FIRDatabase database] reference]child:@"Events"]child:@"Event1"];

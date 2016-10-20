@@ -21,7 +21,17 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
 }
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        UIViewController * challengesViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
+        
+        [self presentViewController:challengesViewController animated:YES completion:nil];
+        
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

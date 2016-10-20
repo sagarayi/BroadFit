@@ -111,7 +111,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "-fetchMyChallenges:"
+            landmarkName = "-fetchAllChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -127,7 +127,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99"
-            landmarkName = "-fetchMyChallenges:"
+            landmarkName = "-fetchAllChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -415,7 +415,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
             endingLineNumber = "92"
-            landmarkName = "-fetchMyChallenges:"
+            landmarkName = "-setNumberOfParticipants:has:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -431,7 +431,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "-fetchMyChallenges:"
+            landmarkName = "-fetchAllChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -511,7 +511,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "-fetchMyChallenges:"
+            landmarkName = "-fetchAllChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -575,7 +575,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "-tableView:numberOfRowsInSection:"
+            landmarkName = "-cacheImages:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -591,7 +591,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "-cacheImages:"
+            landmarkName = "-viewWillDisappear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -623,7 +623,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "-fetchAllChallenges:"
+            landmarkName = "-setNumberOfParticipants:has:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -671,7 +671,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "-fetchAllChallenges:"
+            landmarkName = "-setNumberOfParticipants:has:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -751,7 +751,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "-tableView:numberOfRowsInSection:"
+            landmarkName = "-cacheImages:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1069,7 +1069,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-fetchMyChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1085,7 +1085,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-fetchMyChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1101,7 +1101,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-fetchMyChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1117,7 +1117,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
             endingLineNumber = "113"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-fetchMyChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2444,7 +2444,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
-            landmarkName = "-fetchAllChallenges:"
+            landmarkName = "-setNumberOfParticipants:has:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2460,7 +2460,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "-fetchAllChallenges:"
+            landmarkName = "-setNumberOfParticipants:has:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2476,7 +2476,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "-fetchAllChallenges:"
+            landmarkName = "-setNumberOfParticipants:has:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2572,7 +2572,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkName = "-cacheImages:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2604,7 +2604,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "-join:"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2620,7 +2620,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
             endingLineNumber = "157"
-            landmarkName = "-join:"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2636,7 +2636,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "-join:"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2684,8 +2684,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
-            landmarkName = "@implementation ChallengesView"
-            landmarkType = "3">
+            landmarkName = "-join:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2700,7 +2700,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-            landmarkName = "-incrementNumberOfParticipants:has:"
+            landmarkName = "-updateChallengeDetails:and:with:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2716,7 +2716,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
             endingLineNumber = "144"
-            landmarkName = "-incrementNumberOfParticipants:has:"
+            landmarkName = "-updateChallengeDetails:and:with:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2732,7 +2732,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "-incrementNumberOfParticipants:has:"
+            landmarkName = "-updateChallengeDetails:and:with:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2748,7 +2748,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "-incrementNumberOfParticipants:has:"
+            landmarkName = "-updateChallengeDetails:and:with:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2827,7 +2827,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "-fetchMyChallenges:"
+            landmarkName = "-fetchAllChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2843,7 +2843,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "-incrementNumberOfParticipants:has:"
+            landmarkName = "-updateChallengeDetails:and:with:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

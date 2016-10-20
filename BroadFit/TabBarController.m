@@ -26,8 +26,14 @@
     
     
     
+<<<<<<< HEAD
+    // UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    self.window=self.view.window;
+   // _menuView = [[UIView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+=======
      UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     
+>>>>>>> origin/master
     
     SlideViewController *menuController=[storyBoard instantiateViewControllerWithIdentifier:@"tableView"];
     CalendarViewController *calendarController=[storyBoard instantiateViewControllerWithIdentifier:@"Calendar"];
@@ -36,11 +42,24 @@
                                                andMenuTitles:@[[[NSUserDefaults standardUserDefaults]objectForKey:@"UserName"], @"Calendar",@"Signout"]];
     
     
+<<<<<<< HEAD
+    //TabBarController *tabBarController = [storyBoard instantiateViewControllerWithIdentifier:@"ChallengesController"];
+  //  window = self.view.window;
+    
+//    self.menuView.window.rootViewController = menuController;
+//    window.rootViewController = menuController;
+    self.view.window.rootViewController = menuController;
+
+   self.view.window.backgroundColor = [UIColor whiteColor];
+  //  [self.view addSubview:self.menuView];
+    [self.view.window makeKeyAndVisible];
+=======
   
     window.rootViewController = menuController;
 
     window.backgroundColor = [UIColor whiteColor];
      [window makeKeyAndVisible];
+>>>>>>> origin/master
 
 }
 
