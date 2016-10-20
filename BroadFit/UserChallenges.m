@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.title = @"MY CHALLENGES";
+
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     NSString *userID = [FIRAuth auth].currentUser.uid;
