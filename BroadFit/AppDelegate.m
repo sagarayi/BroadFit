@@ -18,9 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FIRApp configure];
-<<<<<<< HEAD
-    
-=======
+
 //    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
 //    {
 //        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
@@ -29,7 +27,7 @@
 //        self.window.rootViewController = challengesViewController;
 //        
 //    }
->>>>>>> origin/master
+
     return YES;
 }
 

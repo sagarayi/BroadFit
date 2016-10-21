@@ -9,6 +9,9 @@
 #import "SignIn.h"
 #import "TabBarViewController.h"
 #import "CalendarViewController.h"
+#define kEmail "email"
+#define kPassword "password"
+
 @interface SignIn ()
 
 @end
@@ -20,17 +23,23 @@
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
+    if([[NSUserDefaults standardUserDefaults]objectForKey:@kEmail])
     {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        UIViewController * challengesViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-        
-        [self presentViewController:challengesViewController animated:YES completion:nil];
-        
+        _usernameTextField.text =[[NSUserDefaults standardUserDefaults]objectForKey:@kEmail];
+        _passwordTextField.text=[[NSUserDefaults standardUserDefaults]objectForKey:@kPassword];
     }
+//    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
+//    {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+//        UIViewController * challengesViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
+//        
+//        [self presentViewController:challengesViewController animated:YES completion:nil];
+//        
+//    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -86,13 +95,12 @@
     NSString *username = [[_usernameTextField.text componentsSeparatedByString:@"@"] objectAtIndex:0];
     [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
 
-    
-                                
+     [defaults removeObjectForKey:@kEmail];
+     [defaults removeObjectForKey:@kPassword];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-    [self presentViewController:viewController animated:YES completion:nil];
-
-    
+    //[self presentViewController:viewController animated:YES completion:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
     
 }
 @end

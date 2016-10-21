@@ -27,11 +27,11 @@
 - (void) fetchMyChallenges:(NSString *)userID;
 - (void) storeToFirebase:(NSDictionary *)walkingDetails;
 - (void)updateChallengeDetails:(NSString*)challengeName and:(NSArray*)detailName with:(NSArray*)detailValues;
-<<<<<<< HEAD
+
 - (void)incrementNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName;
-=======
-- (void)setNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName;
->>>>>>> origin/master
+
+
+
 
 
 
