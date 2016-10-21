@@ -149,7 +149,7 @@
                 cell.numberOfParticipants.text = [NSString stringWithFormat:@"%d" ,([cell.numberOfParticipants.text intValue]+1)];
       
                     [_joinButton setTitle:@"Joined" forState:UIControlStateNormal];
-            
+            [_joinButton setEnabled:FALSE];
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
                 UIViewController *viewController = nil;
             
