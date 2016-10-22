@@ -75,6 +75,11 @@
 
 -(IBAction)createEvent:(id)sender
 {
+    
+    NSDateFormatter *formatter= [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"dd-MM-yyyy"];
+    NSDate *startDate=[formatter dateFromString:_startingDate];
+    NSDate *endDate=[formatter dateFromString:_endingDate];
     UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okButton=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                              {
@@ -97,9 +102,26 @@
     {
         alert.message=@"Set Ending date";
     }
+    else if([startDate compare:endDate]==NSOrderedSame)
+    {
+       alert.message=@"Starting and Ending dates cannot be same";
+        [self resetDateButton:_startDateButton with:@"Start date"];
+        
+    }
+    else if ([startDate compare:endDate]==NSOrderedDescending)
+    {
+        alert.message=@"Ending date cannot be earlier than starting date ";
+        [self resetDateButton:_endDateButton with:@"End Date"];
+    }
+    [self presentViewController:alert animated:YES completion:nil];
         
 }
-
+-(void)resetDateButton:(UIButton*)button with:(NSString*)title
+{
+    [button setEnabled:YES];
+    [button setTitle:title forState:UIControlStateNormal];
+    
+}
 - (IBAction)setStartDate:(id)sender
 {
     [self presentDatePickerAlert:@"Start Date"];
@@ -142,9 +164,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.imageView.image=_tickImage;
-        cell.imageView.hidden=_hideImage;
+        
+        
     }
     cell.textLabel.text = _challengeNames[indexPath.row];
+    cell.imageView.hidden=_hideImage;
     return cell;
 }
 
@@ -153,15 +177,17 @@
     UITableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
     _hideImage=!_hideImage;
     cell.imageView.hidden=_hideImage;
-    if(!cell.imageView.hidden && [_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
+    if(!cell.imageView.hidden && ![_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
     {
         [_challengesSelected addObject:[_challengeNames objectAtIndex: indexPath.row]];
         _numberOfChallenges++;
+        _hideImage=YES;
     }
     else if(cell.imageView.hidden && [_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
     {
         [_challengesSelected removeObject:[_challengeNames objectAtIndex: indexPath.row]];
         _numberOfChallenges--;
+        _hideImage=NO;
     }
     
 }
@@ -180,15 +206,14 @@
 
 - (IBAction)resetButton:(id)sender
 {
-    [_startDateButton setEnabled:YES];
-    [_endDateButton setEnabled:YES];
-    [_startDateButton setTitle:@"Start Date" forState:UIControlStateNormal];
-    [_endDateButton setTitle:@"Start Date" forState:UIControlStateNormal];
+    [self resetDateButton:_startDateButton with:@"Start date"];
+    [self resetDateButton:_endDateButton with:@"End date"];
     _eventName.text=@"";
     _startingDate=@"";
     _endingDate=@"";
     _hideImage=YES;
     _numberOfChallenges=0;
+    [_challengesSelected removeAllObjects];
     [self.challengesChooser reloadData];
     
     
