@@ -9,20 +9,103 @@
 #import "EventCreationViewController.h"
 
 @interface EventCreationViewController ()
-@property UISwitch * switchView;
-@property NSInteger cellNumber;
+
+
 @end
 
 @implementation EventCreationViewController
-@synthesize switchView,cellNumber;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _tickImage=[UIImage imageNamed:@"tick"];
+    _hideImage=YES;
+    _challengesSelected=[[NSMutableArray alloc]init];
+    self.challengesChooser.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    self.challengesChooser.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Do any additional setup after loading the view.
 }
+-(void)presentDatePickerAlert:(NSString*)title
+{
+    CGRect pickerFrame = CGRectMake(0, 50, 270, 100);
+    UIDatePicker *datePicker=[[UIDatePicker alloc]initWithFrame:pickerFrame];
+    [datePicker setDatePickerMode:UIDatePickerModeDate];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Start Date"
+                                                                   message:@"\n\n\n\n\n\n\n\n"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton=[UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction *action)
+                             {
+                                 NSDateFormatter *formatter= [[NSDateFormatter alloc]init];
+                                 [formatter setDateFormat:@"dd-MM-yyyy"];
+                                 if([title isEqualToString:@"Start Date"])
+                                 {
+                                     
+                                 _startingDate=[formatter stringFromDate:[datePicker date]];
+                                 [_startDateButton setTitle:_startingDate forState:UIControlStateNormal];
+                                 [_startDateButton setEnabled:NO ];
+                                 }
+                                 else
+                                 {
+                                     _endingDate=[formatter stringFromDate:[datePicker date]];
+                                     [_endDateButton setTitle:_endingDate forState:UIControlStateNormal];
+                                     [_endDateButton setEnabled:NO ];
+                                 }
+                             }];
+    UIAlertAction *cancelButton=[UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction *action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    //Make a frame for the picker & then create the picker
 
+//    UIPickerView *regionsPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    
+    //There will be 3 pickers on this view so I am going to use the tag as a way
+    //to identify them in the delegate and datasource
+//    regionsPicker.tag = 1;
+    
+    //set the pickers datasource and delegate
+//    regionsPicker.dataSource = self;
+//    regionsPicker.delegate = self;
+//    regionsPicker.
+    //set the pickers selection indicator to true so that the user will now which one that they are chosing
+//    [regionsPicker setShowsSelectionIndicator:YES];
+    
+    //Add the picker to the alert controller
+    [alert.view addSubview:datePicker];
+    [alert addAction:okButton];
+    [alert addAction:cancelButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(IBAction)createEvent:(id)sender
+{
+    ConnectionHandler *connection=[[ConnectionHandler alloc]init];
+    connection.delegate=self;
+    [connection fetchListOfChallenges];
+}
+
+- (IBAction)setStartDate:(id)sender
+{
+    [self presentDatePickerAlert:@"Start Date"];
+}
+- (IBAction)setEndDate:(id)sender
+{
+    [self presentDatePickerAlert:@"End Date"];
+}
+-(void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges
+{
+    _challengeNames = [listOfChallenges allKeys];
+    [self.challengesChooser reloadData];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -30,8 +113,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    return 3;
+    return [_challengeNames count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -41,32 +123,26 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        //cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"SwitchCell"] autorelease];
-        cell.textLabel.text = @"I Have A Switch";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
-        cell.accessoryView = switchView;
-        [switchView setOn:NO animated:NO];
-        [switchView addTarget:self action:@selector(switchChanged:and:) forControlEvents:UIControlEventValueChanged];
-        
+        cell.imageView.image=_tickImage;
+        cell.imageView.hidden=_hideImage;
     }
-    
-    
-    cell.textLabel.text = @"hi";
-    cellNumber=indexPath.row;
-    //
+    cell.textLabel.text = _challengeNames[indexPath.row];
     return cell;
-    
-}
--(void )switchChanged:(id)sender and:(NSInteger*)rowNumber
-{
-//    NSLog(@"State is : %@ in index:%ld ",(switchView.on) ? @"ON":@"OFF",(long)cellNumber);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    NSLog(@"State is : %@ in index:%ld ",(switchView.on) ? @"ON":@"OFF",indexPath.row);
+    UITableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
+    _hideImage=!_hideImage;
+    cell.imageView.hidden=_hideImage;
+    if(!cell.imageView.hidden)
+    {
+        [_challengesSelected addObject:[_challengeNames objectAtIndex: indexPath.row]];
+    }
 }
+
+
 /*
 #pragma mark - Navigation
 
@@ -77,6 +153,7 @@
 }
 */
 
-- (IBAction)createEvent:(id)sender {
+
+- (IBAction)resetButton:(id)sender {
 }
 @end

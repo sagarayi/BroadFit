@@ -12,6 +12,7 @@
 #import "SignIn.h"
 #import "SignUp.h"
 #import "UserChallenges.h"
+#import "EventCreationViewController.h"
 @interface ConnectionHandler : NSObject<FirebaseOperations>{
     
     id <FirebaseOperations> _delegate;
@@ -26,7 +27,7 @@
 - (void) fetchMyChallenges:(NSString *)userID;
 - (void) storeToFirebase:(NSDictionary *)walkingDetails;
 - (void)updateChallengeDetails:(NSString*)challengeName and:(NSArray*)detailName with:(NSArray*)detailValues;
-
+-(void)fetchListOfChallenges;
 - (void)setNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName setValue:(int)quantity;
 - (void) deleteChallenge:(NSString *)challenge forUser:(NSString *)user;
 

@@ -8,6 +8,7 @@
 
 #import "ConnectionHandler.h"
 #import "CalendarViewController.h"
+#define kAllChallenges "AllChallenges"
 static ConnectionHandler *instance;
 @implementation ConnectionHandler
 
@@ -169,7 +170,23 @@ static ConnectionHandler *instance;
     }];
     
 }
-
+-(void)fetchListOfChallenges
+{
+    FIRDatabaseReference *reference=[[[FIRDatabase database]reference]child:@kAllChallenges];
+    FIRDatabaseQuery *query=[reference queryOrderedByKey];
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * snapshot)
+     {
+         if(![snapshot.value isKindOfClass:[NSNull class]] && snapshot.value!=NULL)
+         {
+             NSDictionary* listOfChallenges=snapshot.value;
+             if(self.delegate && [self.delegate respondsToSelector:@selector(didFinishFetchingChallenges:)])
+             {
+                 [self.delegate didFinishFetchingChallenges:listOfChallenges];
+             }
+         }
+             }];
+    
+}
 - (void) deleteChallenge:(NSString *)challenge forUser:(NSString *)user{
     
     FIRDatabaseReference *reference = [[[[[FIRDatabase database]reference]child:@"Users"]child:user]child:@"challenges enrolled"];
