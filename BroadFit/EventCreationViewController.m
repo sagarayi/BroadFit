@@ -156,6 +156,7 @@
         [connection addEventDetails:_eventName.text containing:_challengesSelected from:_startingDate till:_endingDate with:_imageList and:_challengeId];
         alert.title=@"Success";
         alert.message=@"Event created";
+        [self resetButton:nil];
     }
     [self presentViewController:alert animated:YES completion:nil];
         

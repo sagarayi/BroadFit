@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LwI-QG-TzY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UWm-YG-VYr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -825,7 +825,7 @@
         <!--EventCreation-->
         <scene sceneID="uho-cD-NDu">
             <objects>
-                <viewController title="EventCreation" id="LwI-QG-TzY" customClass="EventCreationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventCreation" title="EventCreation" id="LwI-QG-TzY" customClass="EventCreationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1BQ-o5-9Yu"/>
                         <viewControllerLayoutGuide type="bottom" id="LxR-9v-FQA"/>
@@ -838,7 +838,7 @@
                                 <frame key="frameInset" minX="-3" width="378" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Creation " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI6-Hy-vyx">
-                                <frame key="frameInset" minX="16" minY="28" width="343" height="21"/>
+                                <frame key="frameInset" minX="16" minY="49" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -909,7 +909,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fb9-zv-Viw" firstAttribute="top" secondItem="QI6-Hy-vyx" secondAttribute="bottom" constant="24" id="126-dM-Out"/>
+                            <constraint firstItem="Fb9-zv-Viw" firstAttribute="top" secondItem="QI6-Hy-vyx" secondAttribute="bottom" constant="3" id="126-dM-Out"/>
                             <constraint firstItem="Y5h-uQ-h9C" firstAttribute="top" secondItem="HHq-rq-wJR" secondAttribute="top" id="1Rc-ol-21A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fb9-zv-Viw" secondAttribute="trailing" constant="67" id="2Sv-Fw-gVg"/>
                             <constraint firstItem="Ek7-TU-Jnh" firstAttribute="top" secondItem="PlB-JY-yV9" secondAttribute="bottom" constant="20.5" id="2kZ-3j-mEm"/>
@@ -928,7 +928,7 @@
                             <constraint firstItem="zlV-hr-lQg" firstAttribute="leading" secondItem="bsv-DI-dZI" secondAttribute="trailing" constant="70" id="WuS-gi-F4v"/>
                             <constraint firstAttribute="leadingMargin" secondItem="QI6-Hy-vyx" secondAttribute="leading" id="XlI-V4-e09"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8q3-E2-mGv" secondAttribute="trailing" id="aJd-am-0Jg"/>
-                            <constraint firstItem="QI6-Hy-vyx" firstAttribute="top" secondItem="1BQ-o5-9Yu" secondAttribute="bottom" constant="8" id="aza-ix-y8I"/>
+                            <constraint firstItem="QI6-Hy-vyx" firstAttribute="top" secondItem="1BQ-o5-9Yu" secondAttribute="bottom" constant="29" id="aza-ix-y8I"/>
                             <constraint firstAttribute="trailing" secondItem="Y5h-uQ-h9C" secondAttribute="trailing" id="bzh-M0-0qF"/>
                             <constraint firstAttribute="leadingMargin" secondItem="PlB-JY-yV9" secondAttribute="leading" id="ewB-Jc-jTo"/>
                             <constraint firstItem="Ek7-TU-Jnh" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leadingMargin" constant="56" id="hgt-aq-cZj"/>
@@ -1053,10 +1053,10 @@
             </objects>
             <point key="canvasLocation" x="3374" y="-370"/>
         </scene>
-        <!--Sleep Details-->
+        <!--Sleeping-->
         <scene sceneID="qNc-qc-Sfq">
             <objects>
-                <viewController storyboardIdentifier="SleepingVC" id="IyS-Av-JTM" customClass="SleepDetails" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SleepingVC" title="Sleeping" id="IyS-Av-JTM" customClass="SleepDetails" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qky-wE-DO1"/>
                         <viewControllerLayoutGuide type="bottom" id="oFz-No-XdX"/>
