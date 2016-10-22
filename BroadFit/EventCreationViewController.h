@@ -23,8 +23,12 @@
 @property NSString *endingDate;
 @property NSString *nameOfTheEvent;
 @property NSInteger numberOfChallenges;
+@property NSArray* imageList;
+@property NSArray* challengeId;
+@property NSMutableArray* challengeIdSelected;
 
--(void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges;
+- (void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges;
+- (void)didFetchImages:(NSDictionary*)images;
 - (IBAction)createEvent:(id)sender;
 - (IBAction)setStartDate:(id)sender;
 - (IBAction)setEndDate:(id)sender;

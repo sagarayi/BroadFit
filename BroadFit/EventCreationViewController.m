@@ -24,10 +24,24 @@
     _challengesSelected=[[NSMutableArray alloc]init];
     self.challengesChooser.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.challengesChooser.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _imageList=@[@"drinking",@"eating",@"sleeping",@"walking"];
     ConnectionHandler *connection=[[ConnectionHandler alloc]init];
     connection.delegate=self;
     [connection fetchListOfChallenges];
+    [connection fetchImages];
     // Do any additional setup after loading the view.
+}
+
+-(void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges
+{
+    _challengeNames = [listOfChallenges allKeys];
+    _challengeId=[listOfChallenges allValues];
+    [self.challengesChooser reloadData];
+    
+}
+-(void)didFetchImages:(NSDictionary *)images
+{
+    _imageList=[images allValues];
 }
 -(void)presentDatePickerAlert:(NSString*)title
 {
@@ -113,6 +127,12 @@
         alert.message=@"Ending date cannot be earlier than starting date ";
         [self resetDateButton:_endDateButton with:@"End Date"];
     }
+    else
+    {
+        ConnectionHandler *connection=[[ConnectionHandler alloc]init];
+        connection.delegate=self;
+        [connection addEventDetails:_eventName.text containing:_challengesSelected from:_startingDate till:_endingDate with:_imageList and:_challengeId];
+    }
     [self presentViewController:alert animated:YES completion:nil];
         
 }
@@ -130,13 +150,6 @@
 - (IBAction)setEndDate:(id)sender
 {
     [self presentDatePickerAlert:@"End Date"];
-}
-
--(void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges
-{
-    _challengeNames = [listOfChallenges allKeys];
-    [self.challengesChooser reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -180,12 +193,14 @@
     if(!cell.imageView.hidden && ![_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
     {
         [_challengesSelected addObject:[_challengeNames objectAtIndex: indexPath.row]];
+        [_challengeIdSelected addObject:[_challengeId objectAtIndex:indexPath.row]];
         _numberOfChallenges++;
         _hideImage=YES;
     }
     else if(cell.imageView.hidden && [_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
     {
         [_challengesSelected removeObject:[_challengeNames objectAtIndex: indexPath.row]];
+        [_challengeIdSelected removeObject:[_challengeId objectAtIndex:indexPath.row]];
         _numberOfChallenges--;
         _hideImage=NO;
     }
@@ -215,7 +230,5 @@
     _numberOfChallenges=0;
     [_challengesSelected removeAllObjects];
     [self.challengesChooser reloadData];
-    
-    
 }
 @end

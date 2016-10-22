@@ -27,9 +27,11 @@
 - (void) fetchMyChallenges:(NSString *)userID;
 - (void) storeToFirebase:(NSDictionary *)walkingDetails;
 - (void)updateChallengeDetails:(NSString*)challengeName and:(NSArray*)detailName with:(NSArray*)detailValues;
--(void)fetchListOfChallenges;
+- (void)fetchListOfChallenges;
 - (void)setNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName setValue:(int)quantity;
 - (void) deleteChallenge:(NSString *)challenge forUser:(NSString *)user;
+- (void)addEventDetails:(NSString*)eventName containing:(NSArray*)challenges from:(NSString*)startDate till:(NSString*)endDate with:(NSArray*)imageList and:(NSArray*)challengeId;
+- (void)fetchImages;
 
 
 

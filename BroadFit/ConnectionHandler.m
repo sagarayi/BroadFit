@@ -90,6 +90,20 @@ static ConnectionHandler *instance;
     
     
 }
+-(void)fetchImages
+{
+    FIRDatabaseReference *references=[[[FIRDatabase database]reference]child:@"Images"];
+    FIRDatabaseQuery *query=[references queryOrderedByKey];
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
+     {
+         NSDictionary *images=snapshot.value;
+         if(self.delegate && [self.delegate respondsToSelector:@selector(didFetchImages:)])
+         {
+             [self.delegate didFetchImages:images];
+         }
+     }];
+}
+
 - (void) fetchAllChallenges:(NSString *)eventName{
     
     FIRDatabaseReference *rootRef= [[[[FIRDatabase database] reference]child:@"Events"]child:@"Event1"];
@@ -185,7 +199,39 @@ static ConnectionHandler *instance;
              }
          }
              }];
-    
+}
+
+-(void)addEventDetails:(NSString*)eventName containing:(NSArray*)challenges from:(NSString*)startDate till:(NSString*)endDate with:(NSArray*)imageList and:(NSArray*)challengeId
+{
+    FIRDatabaseReference *reference=[[[[[FIRDatabase database]reference]child:@"Events"]child:eventName]child:@"Challenges"];
+//    NSArray * challengeDetails=@[@"Id",@"Participants",@"Winner",@"image"];
+    for(int i=0;i<[challenges count];i++)
+    {
+        [[[reference child:challenges[i]]child:@"Id"]setValue:challengeId[i]];
+        [[[reference child:challenges[i]]child:@"Participants"]setValue:@"0"];
+        [[[reference child:challenges[i]]child:@"Winner"]setValue:@""];
+        if([challenges[i] isEqualToString:@"Drinking Water"])
+        {
+            [[[reference child:challenges[i]]child:@"image"]setValue:@"drinking"];
+        }
+        else if([challenges[i] isEqualToString:@"Eating"])
+        {
+            [[[reference child:challenges[i]]child:@"image"]setValue:@"eating"];
+        }
+        else if([challenges[i] isEqualToString:@"Sleeping"])
+        {
+            [[[reference child:challenges[i]]child:@"image"]setValue:@"sleeping"];
+        }
+        else
+        {
+            [[[reference child:challenges[i]]child:@"image"]setValue:@"walking"];
+        }
+    }
+    reference=[[[FIRDatabase database ]reference] child:@"EventDetails"];
+    [[reference child:@"EndDate"]setValue:endDate];
+    [[reference child:@"Name"]setValue:eventName];
+    [[reference child:@"StartDate"]setValue:startDate];
+    [[reference child:@"Winner"]setValue:@""];
 }
 - (void) deleteChallenge:(NSString *)challenge forUser:(NSString *)user{
     
