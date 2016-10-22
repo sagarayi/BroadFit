@@ -15,13 +15,18 @@
 
 @implementation EventCreationViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     _tickImage=[UIImage imageNamed:@"tick"];
     _hideImage=YES;
+    _numberOfChallenges=0;
     _challengesSelected=[[NSMutableArray alloc]init];
     self.challengesChooser.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.challengesChooser.separatorStyle = UITableViewCellSeparatorStyleNone;
+    ConnectionHandler *connection=[[ConnectionHandler alloc]init];
+    connection.delegate=self;
+    [connection fetchListOfChallenges];
     // Do any additional setup after loading the view.
 }
 -(void)presentDatePickerAlert:(NSString*)title
@@ -61,22 +66,7 @@
                                  [alert dismissViewControllerAnimated:YES completion:nil];
                                  
                              }];
-    //Make a frame for the picker & then create the picker
-
-//    UIPickerView *regionsPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
     
-    //There will be 3 pickers on this view so I am going to use the tag as a way
-    //to identify them in the delegate and datasource
-//    regionsPicker.tag = 1;
-    
-    //set the pickers datasource and delegate
-//    regionsPicker.dataSource = self;
-//    regionsPicker.delegate = self;
-//    regionsPicker.
-    //set the pickers selection indicator to true so that the user will now which one that they are chosing
-//    [regionsPicker setShowsSelectionIndicator:YES];
-    
-    //Add the picker to the alert controller
     [alert.view addSubview:datePicker];
     [alert addAction:okButton];
     [alert addAction:cancelButton];
@@ -85,36 +75,63 @@
 
 -(IBAction)createEvent:(id)sender
 {
-    ConnectionHandler *connection=[[ConnectionHandler alloc]init];
-    connection.delegate=self;
-    [connection fetchListOfChallenges];
+    UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+    [alert addAction:okButton];
+    if([_eventName.text isEqualToString:@""] )
+    {
+        alert.message=@"Event name cannot be empty";
+    }
+    else if(_numberOfChallenges == 0)
+    {
+        alert.message=@"Select atleast one challenge";
+    }
+    else if([_startingDate isEqualToString:@""])
+    {
+        alert.message=@"Set Starting date";
+    }
+    else if([_endingDate isEqualToString:@""])
+    {
+        alert.message=@"Set Ending date";
+    }
+        
 }
 
 - (IBAction)setStartDate:(id)sender
 {
     [self presentDatePickerAlert:@"Start Date"];
 }
+
 - (IBAction)setEndDate:(id)sender
 {
     [self presentDatePickerAlert:@"End Date"];
 }
+
 -(void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges
 {
     _challengeNames = [listOfChallenges allKeys];
     [self.challengesChooser reloadData];
     
 }
-- (void)didReceiveMemoryWarning {
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_challengeNames count];
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"detailCell";
@@ -136,10 +153,17 @@
     UITableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
     _hideImage=!_hideImage;
     cell.imageView.hidden=_hideImage;
-    if(!cell.imageView.hidden)
+    if(!cell.imageView.hidden && [_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
     {
         [_challengesSelected addObject:[_challengeNames objectAtIndex: indexPath.row]];
+        _numberOfChallenges++;
     }
+    else if(cell.imageView.hidden && [_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
+    {
+        [_challengesSelected removeObject:[_challengeNames objectAtIndex: indexPath.row]];
+        _numberOfChallenges--;
+    }
+    
 }
 
 
@@ -154,6 +178,19 @@
 */
 
 
-- (IBAction)resetButton:(id)sender {
+- (IBAction)resetButton:(id)sender
+{
+    [_startDateButton setEnabled:YES];
+    [_endDateButton setEnabled:YES];
+    [_startDateButton setTitle:@"Start Date" forState:UIControlStateNormal];
+    [_endDateButton setTitle:@"Start Date" forState:UIControlStateNormal];
+    _eventName.text=@"";
+    _startingDate=@"";
+    _endingDate=@"";
+    _hideImage=YES;
+    _numberOfChallenges=0;
+    [self.challengesChooser reloadData];
+    
+    
 }
 @end
