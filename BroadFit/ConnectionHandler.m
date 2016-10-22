@@ -201,13 +201,13 @@ static ConnectionHandler *instance;
              }];
 }
 
--(void)addEventDetails:(NSString*)eventName containing:(NSArray*)challenges from:(NSString*)startDate till:(NSString*)endDate with:(NSArray*)imageList and:(NSArray*)challengeId
+-(void)addEventDetails:(NSString*)eventName containing:(NSArray*)challenges from:(NSString*)startDate till:(NSString*)endDate with:(NSArray*)imageList and:(NSDictionary*)challengeId
 {
     FIRDatabaseReference *reference=[[[[[FIRDatabase database]reference]child:@"Events"]child:eventName]child:@"Challenges"];
 //    NSArray * challengeDetails=@[@"Id",@"Participants",@"Winner",@"image"];
     for(int i=0;i<[challenges count];i++)
     {
-        [[[reference child:challenges[i]]child:@"Id"]setValue:challengeId[i]];
+        [[[reference child:challenges[i]]child:@"Id"]setValue:[challengeId objectForKey:challenges[i]]];
         [[[reference child:challenges[i]]child:@"Participants"]setValue:@"0"];
         [[[reference child:challenges[i]]child:@"Winner"]setValue:@""];
         if([challenges[i] isEqualToString:@"Drinking Water"])
@@ -227,7 +227,7 @@ static ConnectionHandler *instance;
             [[[reference child:challenges[i]]child:@"image"]setValue:@"walking"];
         }
     }
-    reference=[[[FIRDatabase database ]reference] child:@"EventDetails"];
+    reference=[[[[[FIRDatabase database ]reference] child:@"Events"]child:eventName]child:@"EventDetails"];
     [[reference child:@"EndDate"]setValue:endDate];
     [[reference child:@"Name"]setValue:eventName];
     [[reference child:@"StartDate"]setValue:startDate];

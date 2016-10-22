@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *challengesChooser;
 @property (weak, nonatomic) IBOutlet UIButton *startDateButton;
 @property (weak, nonatomic) IBOutlet UIButton *endDateButton;
+@property UIActivityIndicatorView *activityIndicator;
 
 
 @property UIImage *tickImage;
@@ -24,8 +25,8 @@
 @property NSString *nameOfTheEvent;
 @property NSInteger numberOfChallenges;
 @property NSArray* imageList;
-@property NSArray* challengeId;
-@property NSMutableArray* challengeIdSelected;
+@property NSDictionary* challengeId;
+
 
 - (void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges;
 - (void)didFetchImages:(NSDictionary*)images;

@@ -20,22 +20,32 @@
     [super viewDidLoad];
     _tickImage=[UIImage imageNamed:@"tick"];
     _hideImage=YES;
+    _startingDate=@"";
+    _endingDate=@"";
     _numberOfChallenges=0;
     _challengesSelected=[[NSMutableArray alloc]init];
     self.challengesChooser.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-    self.challengesChooser.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.challengesChooser.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
     _imageList=@[@"drinking",@"eating",@"sleeping",@"walking"];
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _activityIndicator.alpha = 1.0;
+//    _activityIndicator.center = CGPointMake(self.view.frame.size.width-50, self.view.frame.size.height-50);
+    
+    [self.challengesChooser addSubview:_activityIndicator];
     ConnectionHandler *connection=[[ConnectionHandler alloc]init];
     connection.delegate=self;
     [connection fetchListOfChallenges];
+    [_activityIndicator startAnimating];
     [connection fetchImages];
     // Do any additional setup after loading the view.
 }
 
 -(void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges
 {
+    [_activityIndicator stopAnimating];
+    [_activityIndicator removeFromSuperview];
     _challengeNames = [listOfChallenges allKeys];
-    _challengeId=[listOfChallenges allValues];
+    _challengeId=listOfChallenges;
     [self.challengesChooser reloadData];
     
 }
@@ -92,6 +102,8 @@
     
     NSDateFormatter *formatter= [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"dd-MM-yyyy"];
+    NSString *currentdate=[formatter stringFromDate:[NSDate date]];
+    NSDate *todaydate=[formatter dateFromString:currentdate];
     NSDate *startDate=[formatter dateFromString:_startingDate];
     NSDate *endDate=[formatter dateFromString:_endingDate];
     UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -127,11 +139,23 @@
         alert.message=@"Ending date cannot be earlier than starting date ";
         [self resetDateButton:_endDateButton with:@"End Date"];
     }
+    else if ([startDate compare:todaydate]==NSOrderedAscending)
+    {
+        alert.message=@"Starting date cannot be earlier than today";
+        [self resetDateButton:_startDateButton with:@"Start Date"];
+    }
+    else if ([endDate compare:todaydate]==NSOrderedAscending)
+    {
+        alert.message=@"Ending date cannot be earlier than today";
+        [self resetDateButton:_endDateButton with:@"End Date"];
+    }
     else
     {
         ConnectionHandler *connection=[[ConnectionHandler alloc]init];
         connection.delegate=self;
         [connection addEventDetails:_eventName.text containing:_challengesSelected from:_startingDate till:_endingDate with:_imageList and:_challengeId];
+        alert.title=@"Success";
+        alert.message=@"Event created";
     }
     [self presentViewController:alert animated:YES completion:nil];
         
@@ -193,14 +217,14 @@
     if(!cell.imageView.hidden && ![_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
     {
         [_challengesSelected addObject:[_challengeNames objectAtIndex: indexPath.row]];
-        [_challengeIdSelected addObject:[_challengeId objectAtIndex:indexPath.row]];
+        
         _numberOfChallenges++;
         _hideImage=YES;
     }
     else if(cell.imageView.hidden && [_challengesSelected containsObject:[_challengeNames objectAtIndex: indexPath.row]])
     {
         [_challengesSelected removeObject:[_challengeNames objectAtIndex: indexPath.row]];
-        [_challengeIdSelected removeObject:[_challengeId objectAtIndex:indexPath.row]];
+       
         _numberOfChallenges--;
         _hideImage=NO;
     }
