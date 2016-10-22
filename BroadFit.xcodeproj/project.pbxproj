@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D04F6371DBA4C9700A45C0E /* EventCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D04F6361DBA4C9700A45C0E /* EventCreationViewController.m */; };
 		6B51E2D658D01A8CA9D07D3B /* libPods-BroadFit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE4DAE3D2FDA2670AC86A5E /* libPods-BroadFit.a */; };
 		6C2175FB1DA7512500EFBA4A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2175FA1DA7512500EFBA4A /* MapKit.framework */; };
 		6C63BD301DA4F4C100C5C675 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C63BD2F1DA4F4C100C5C675 /* SignUp.m */; };
@@ -36,6 +37,8 @@
 /* Begin PBXFileReference section */
 		142C53AE0DCCBE372E2CA23A /* Pods-BroadFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BroadFit/Pods-BroadFit.release.xcconfig"; sourceTree = "<group>"; };
 		5B0B1ADAEA9E6B62DF47A5BF /* Pods-BroadFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BroadFit/Pods-BroadFit.debug.xcconfig"; sourceTree = "<group>"; };
+		5D04F6351DBA4C9700A45C0E /* EventCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCreationViewController.h; sourceTree = "<group>"; };
+		5D04F6361DBA4C9700A45C0E /* EventCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCreationViewController.m; sourceTree = "<group>"; };
 		6C2175FA1DA7512500EFBA4A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6C63BD2E1DA4F4C100C5C675 /* SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUp.h; sourceTree = "<group>"; };
 		6C63BD2F1DA4F4C100C5C675 /* SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUp.m; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				6C63BD3B1DA4F54600C5C675 /* DrinkingDetailsView.m */,
 				6C63BD401DA4F58C00C5C675 /* BreakfastDetailsView.h */,
 				6C63BD411DA4F58C00C5C675 /* BreakfastDetailsView.m */,
+				5D04F6351DBA4C9700A45C0E /* EventCreationViewController.h */,
+				5D04F6361DBA4C9700A45C0E /* EventCreationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				6C63BD391DA4F52800C5C675 /* WalkingDetailsView.m in Sources */,
 				6CCCE0251DA24CEA001ACB9E /* main.m in Sources */,
 				6C63BD331DA4F4D600C5C675 /* SignIn.m in Sources */,
+				5D04F6371DBA4C9700A45C0E /* EventCreationViewController.m in Sources */,
 				6C63BD3C1DA4F54600C5C675 /* DrinkingDetailsView.m in Sources */,
 				906418AA1DB8A74400E40101 /* TabBarController.m in Sources */,
 				906418A71DB89C5800E40101 /* CalendarViewController.m in Sources */,

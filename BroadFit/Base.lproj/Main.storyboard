@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UWm-YG-VYr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LwI-QG-TzY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -821,6 +821,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXc-U7-iMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2561" y="319"/>
+        </scene>
+        <!--EventCreation-->
+        <scene sceneID="uho-cD-NDu">
+            <objects>
+                <viewController title="EventCreation" id="LwI-QG-TzY" customClass="EventCreationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1BQ-o5-9Yu"/>
+                        <viewControllerLayoutGuide type="bottom" id="LxR-9v-FQA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HHq-rq-wJR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Creation " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI6-Hy-vyx">
+                                <frame key="frameInset" minX="16" minY="28" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fb9-zv-Viw">
+                                <frame key="frameInset" minX="82" minY="73" width="210" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ek7-TU-Jnh">
+                                <frame key="frameInset" minX="72" minY="189" width="240" height="357"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeCell" id="cK1-g9-XdK">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cK1-g9-XdK" id="VqP-Pg-arp">
+                                            <frame key="frameInset" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LwI-QG-TzY" id="lBi-Vu-8Hh"/>
+                                    <outlet property="delegate" destination="LwI-QG-TzY" id="zbx-hA-zCl"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="List of Challenges" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlB-JY-yV9">
+                                <frame key="frameInset" minX="16" minY="151" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q3-E2-mGv">
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createEvent:" destination="LwI-QG-TzY" eventType="touchUpInside" id="C0E-HR-XY6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fb9-zv-Viw" firstAttribute="top" secondItem="QI6-Hy-vyx" secondAttribute="bottom" constant="24" id="126-dM-Out"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fb9-zv-Viw" secondAttribute="trailing" constant="67" id="2Sv-Fw-gVg"/>
+                            <constraint firstItem="Ek7-TU-Jnh" firstAttribute="top" secondItem="PlB-JY-yV9" secondAttribute="bottom" constant="14" id="2kZ-3j-mEm"/>
+                            <constraint firstItem="8q3-E2-mGv" firstAttribute="top" secondItem="Ek7-TU-Jnh" secondAttribute="bottom" constant="8" id="8RA-7l-NZ4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QI6-Hy-vyx" secondAttribute="trailing" id="AWA-yr-H4d"/>
+                            <constraint firstItem="LxR-9v-FQA" firstAttribute="top" secondItem="8q3-E2-mGv" secondAttribute="bottom" constant="83" id="Gwq-AH-bJ0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PlB-JY-yV9" secondAttribute="trailing" id="LU7-3o-Pcz"/>
+                            <constraint firstItem="8q3-E2-mGv" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leadingMargin" constant="250" id="OV5-7U-PQp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ek7-TU-Jnh" secondAttribute="trailing" constant="47" id="RKY-AP-Unb"/>
+                            <constraint firstItem="PlB-JY-yV9" firstAttribute="top" secondItem="Fb9-zv-Viw" secondAttribute="bottom" constant="48" id="Vfq-5V-krM"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QI6-Hy-vyx" secondAttribute="leading" id="XlI-V4-e09"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8q3-E2-mGv" secondAttribute="trailing" constant="47" id="aJd-am-0Jg"/>
+                            <constraint firstItem="QI6-Hy-vyx" firstAttribute="top" secondItem="1BQ-o5-9Yu" secondAttribute="bottom" constant="8" id="aza-ix-y8I"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PlB-JY-yV9" secondAttribute="leading" id="ewB-Jc-jTo"/>
+                            <constraint firstItem="Ek7-TU-Jnh" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leadingMargin" constant="56" id="hgt-aq-cZj"/>
+                            <constraint firstItem="LxR-9v-FQA" firstAttribute="top" secondItem="Ek7-TU-Jnh" secondAttribute="bottom" constant="121" id="iJP-0G-MtH"/>
+                            <constraint firstItem="Fb9-zv-Viw" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leadingMargin" constant="66" id="r4M-DT-imU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="challengesList" destination="Ek7-TU-Jnh" id="DME-bS-tbX"/>
+                        <outlet property="eventName" destination="Fb9-zv-Viw" id="jf2-Tq-arB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOB-Gk-y8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="1179.7601199400301"/>
         </scene>
         <!--Water-->
         <scene sceneID="Qfc-d5-cgN">

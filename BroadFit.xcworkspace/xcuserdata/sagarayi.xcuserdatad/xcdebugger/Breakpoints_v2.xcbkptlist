@@ -191,8 +191,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
-            landmarkName = "@implementation ConnectionHandler"
-            landmarkType = "3">
+            landmarkName = "-storeToFirebase:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,8 +207,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
             endingLineNumber = "129"
-            landmarkName = "@implementation ConnectionHandler"
-            landmarkType = "3">
+            landmarkName = "-storeToFirebase:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,8 +223,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "@implementation ConnectionHandler"
-            landmarkType = "3">
+            landmarkName = "-storeToFirebase:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -239,8 +239,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "@implementation ConnectionHandler"
-            landmarkType = "3">
+            landmarkName = "-storeToFirebase:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -271,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
             endingLineNumber = "176"
-            landmarkName = "-numberOfSectionsInTableView:"
+            landmarkName = "-showCenterViewWithShadow:withOffset:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -401,38 +401,6 @@
             endingLineNumber = "81"
             landmarkName = "-didFetchChallenges:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CalendarViewController didFetchChallenges:]"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498652166.898235"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "1590">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CalendarViewController didFetchChallenges:]"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498652166.899651"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "1598">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -449,6 +417,38 @@
             endingLineNumber = "86"
             landmarkName = "-didFetchChallenges:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CalendarViewController didFetchChallenges:]"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
+                  timestampString = "498750775.725957"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1402">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CalendarViewController didFetchChallenges:]"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
+                  timestampString = "498750775.727673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1417">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -465,6 +465,38 @@
             endingLineNumber = "94"
             landmarkName = "-didFetchChallenges:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CalendarViewController didFetchChallenges:]"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
+                  timestampString = "498750775.731404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "1836">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CalendarViewController didFetchChallenges:]"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
+                  timestampString = "498750775.733073"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "1844">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -527,7 +559,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "-numberOfSectionsInTableView:"
+            landmarkName = "-didFetchChallenges:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -672,6 +704,38 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/EventCreationViewController.m"
+            timestampString = "498750274.979517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-switchChanged:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/EventCreationViewController.m"
+            timestampString = "498750653.137957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
