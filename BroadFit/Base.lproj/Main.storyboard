@@ -571,7 +571,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3D7-lE-mPX">
             <objects>
-                <tabBarController storyboardIdentifier="ChallengesController" id="ZeE-Wt-k29" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ChallengesController" modalTransitionStyle="flipHorizontal" id="ZeE-Wt-k29" customClass="TabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="iqI-wT-GUo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -951,7 +951,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOB-Gk-y8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="1179.7601199400301"/>
+            <point key="canvasLocation" x="5271" y="-370"/>
         </scene>
         <!--Water-->
         <scene sceneID="Qfc-d5-cgN">
@@ -1158,7 +1158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcd-ia-ZkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4277.6000000000004" y="794.75262368815595"/>
+            <point key="canvasLocation" x="4241" y="319"/>
         </scene>
         <!--Slide View Controller-->
         <scene sceneID="pIO-v1-eO5">
@@ -1271,7 +1271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiI-7e-DfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4278" y="69"/>
+            <point key="canvasLocation" x="4241" y="-370"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="97p-MX-mmk">

@@ -166,19 +166,22 @@ static ConnectionHandler *instance;
     __block NSString *uid;
     FIRDatabaseReference *ref=[[[FIRDatabase database]reference]child:@"Admin"];
     FIRDatabaseQuery *query=[ref queryOrderedByKey];
-    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
-     {
-         uid=snapshot.value;
-         if(self.delegate && [self.delegate respondsToSelector:@selector(adminStatus:)])
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
          {
-             if([uid isEqualToString:userID])
-                 [self.delegate adminStatus:true];
-             else
-                 [self.delegate adminStatus:false];
-         }
+             uid=snapshot.value;
+             if(self.delegate && [self.delegate respondsToSelector:@selector(adminStatus:)])
+             {
+                 if([uid isEqualToString:userID])
+                     [self.delegate adminStatus:true];
+                 else
+                     [self.delegate adminStatus:false];
+             }
              
-         
-     }];
+             
+         }];
+        
+    });
     
         
 }

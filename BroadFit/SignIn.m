@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
 }
 //-(void)viewDidAppear:(BOOL)animated
 //{
@@ -43,8 +43,9 @@
     
 
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    _activityIndicator.alpha = 1.0;
+    _activityIndicator.alpha = 2.0;
     _activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    
     [_activityIndicator startAnimating];
     [self.view addSubview:_activityIndicator];
     NSDictionary *user = @{
@@ -74,6 +75,7 @@
                             handler:^(UIAlertAction *action) {}
                             ];
     [alert addAction:addOK];
+    [_activityIndicator stopAnimating];
     [self presentViewController:alert animated:YES completion:nil];
     
     

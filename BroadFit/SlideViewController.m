@@ -86,6 +86,8 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.menu.backgroundColor=[UIColor colorWithPatternImage:image];
+//    [self.tabBarController.tabBarItem setBadgeColor:[UIColor redColor] ];
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
     self.menu.separatorStyle=UITableViewCellSeparatorStyleNone;
     
 }

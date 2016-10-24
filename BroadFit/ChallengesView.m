@@ -174,6 +174,7 @@
         }else{
             
                 [_joinButton setTitle:@"Join" forState:UIControlStateNormal];
+            [_joinButton setEnabled:TRUE];
 //                if([snapshot.value  isEqual: @"Joined"])
 //                        [ref removeAllObservers];
         }
