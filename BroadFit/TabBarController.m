@@ -13,6 +13,7 @@
 #import "CalendarViewController.h"
 #import "SignIn.h"
 #import "TabBarController.h"
+#import "EventCreationViewController.h"
 #import "AllParticipantsViewController.h"
 @interface TabBarController ()
 
@@ -34,8 +35,9 @@
     CalendarViewController *calendarController=[storyBoard instantiateViewControllerWithIdentifier:@"Calendar"];
     SignIn *sign=[storyBoard instantiateViewControllerWithIdentifier:@"Login"];
     AllParticipantsViewController *allParticpants = [storyBoard instantiateViewControllerWithIdentifier:@"AllParticpants"];
-    menuController = [menuController initWithViewControllers:@[self,calendarController,sign]
-                                               andMenuTitles:@[[[NSUserDefaults standardUserDefaults]objectForKey:@"UserName"], @"Calendar",@"Signout"]];
+    EventCreationViewController *eventCreator=[storyBoard instantiateViewControllerWithIdentifier:@"EventCreation"];
+    menuController = [menuController initWithViewControllers:@[self,calendarController,eventCreator,sign]
+                                               andMenuTitles:@[[[NSUserDefaults standardUserDefaults]objectForKey:@"UserName"], @"Calendar",@"Create Event",@"Signout"]];
     
   
     window.rootViewController = menuController;

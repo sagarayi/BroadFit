@@ -822,6 +822,137 @@
             </objects>
             <point key="canvasLocation" x="2561" y="319"/>
         </scene>
+        <!--EventCreation-->
+        <scene sceneID="uho-cD-NDu">
+            <objects>
+                <viewController storyboardIdentifier="EventCreation" title="EventCreation" id="LwI-QG-TzY" customClass="EventCreationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1BQ-o5-9Yu"/>
+                        <viewControllerLayoutGuide type="bottom" id="LxR-9v-FQA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HHq-rq-wJR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Y5h-uQ-h9C">
+                                <frame key="frameInset" minX="-3" width="378" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Creation " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI6-Hy-vyx">
+                                <frame key="frameInset" minX="16" minY="49" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fb9-zv-Viw">
+                                <frame key="frameInset" minX="82" minY="73" width="210" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ek7-TU-Jnh">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeCell" id="cK1-g9-XdK">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cK1-g9-XdK" id="VqP-Pg-arp">
+                                            <frame key="frameInset" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LwI-QG-TzY" id="lBi-Vu-8Hh"/>
+                                    <outlet property="delegate" destination="LwI-QG-TzY" id="zbx-hA-zCl"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="List of Challenges" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlB-JY-yV9">
+                                <frame key="frameInset" minX="-3" minY="151" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsv-DI-dZI">
+                                <state key="normal" title="Start Date">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setStartDate:" destination="LwI-QG-TzY" eventType="touchUpInside" id="SEf-mf-Ri0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlV-hr-lQg">
+                                <state key="normal" title="End Date">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setEndDate:" destination="LwI-QG-TzY" eventType="touchUpInside" id="jUm-xX-zYR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ3-fN-6jo">
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButton:" destination="LwI-QG-TzY" eventType="touchUpInside" id="2Q5-Ec-1EG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q3-E2-mGv">
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="27"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createEvent:" destination="LwI-QG-TzY" eventType="touchUpInside" id="C0E-HR-XY6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fb9-zv-Viw" firstAttribute="top" secondItem="QI6-Hy-vyx" secondAttribute="bottom" constant="3" id="126-dM-Out"/>
+                            <constraint firstItem="Y5h-uQ-h9C" firstAttribute="top" secondItem="HHq-rq-wJR" secondAttribute="top" id="1Rc-ol-21A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fb9-zv-Viw" secondAttribute="trailing" constant="67" id="2Sv-Fw-gVg"/>
+                            <constraint firstItem="Ek7-TU-Jnh" firstAttribute="top" secondItem="PlB-JY-yV9" secondAttribute="bottom" constant="20.5" id="2kZ-3j-mEm"/>
+                            <constraint firstItem="Y5h-uQ-h9C" firstAttribute="leading" secondItem="UZ3-fN-6jo" secondAttribute="trailing" constant="-159" id="33c-3u-97i"/>
+                            <constraint firstItem="8q3-E2-mGv" firstAttribute="top" secondItem="Ek7-TU-Jnh" secondAttribute="bottom" constant="15" id="8RA-7l-NZ4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QI6-Hy-vyx" secondAttribute="trailing" id="AWA-yr-H4d"/>
+                            <constraint firstItem="bsv-DI-dZI" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leadingMargin" constant="56" id="Awk-WL-8x5"/>
+                            <constraint firstItem="LxR-9v-FQA" firstAttribute="top" secondItem="8q3-E2-mGv" secondAttribute="bottom" constant="76" id="Gwq-AH-bJ0"/>
+                            <constraint firstItem="zlV-hr-lQg" firstAttribute="leading" secondItem="Y5h-uQ-h9C" secondAttribute="trailing" constant="-156" id="HN9-us-v1X"/>
+                            <constraint firstItem="LxR-9v-FQA" firstAttribute="top" secondItem="Y5h-uQ-h9C" secondAttribute="bottom" id="KMo-Py-xbW"/>
+                            <constraint firstItem="PlB-JY-yV9" firstAttribute="top" secondItem="zlV-hr-lQg" secondAttribute="bottom" constant="8" id="KrY-yU-mZ2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PlB-JY-yV9" secondAttribute="trailing" id="LU7-3o-Pcz"/>
+                            <constraint firstItem="zlV-hr-lQg" firstAttribute="top" secondItem="Fb9-zv-Viw" secondAttribute="bottom" constant="10" id="Lm2-yd-0Ew"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ek7-TU-Jnh" secondAttribute="trailing" constant="47" id="RKY-AP-Unb"/>
+                            <constraint firstItem="PlB-JY-yV9" firstAttribute="top" secondItem="Fb9-zv-Viw" secondAttribute="bottom" constant="48" id="Vfq-5V-krM"/>
+                            <constraint firstItem="zlV-hr-lQg" firstAttribute="leading" secondItem="bsv-DI-dZI" secondAttribute="trailing" constant="70" id="WuS-gi-F4v"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QI6-Hy-vyx" secondAttribute="leading" id="XlI-V4-e09"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8q3-E2-mGv" secondAttribute="trailing" id="aJd-am-0Jg"/>
+                            <constraint firstItem="QI6-Hy-vyx" firstAttribute="top" secondItem="1BQ-o5-9Yu" secondAttribute="bottom" constant="29" id="aza-ix-y8I"/>
+                            <constraint firstAttribute="trailing" secondItem="Y5h-uQ-h9C" secondAttribute="trailing" id="bzh-M0-0qF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PlB-JY-yV9" secondAttribute="leading" id="ewB-Jc-jTo"/>
+                            <constraint firstItem="Ek7-TU-Jnh" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leadingMargin" constant="56" id="hgt-aq-cZj"/>
+                            <constraint firstItem="LxR-9v-FQA" firstAttribute="top" secondItem="Ek7-TU-Jnh" secondAttribute="bottom" constant="121" id="iJP-0G-MtH"/>
+                            <constraint firstItem="bsv-DI-dZI" firstAttribute="top" secondItem="Fb9-zv-Viw" secondAttribute="bottom" constant="10" id="icn-j8-zb9"/>
+                            <constraint firstItem="PlB-JY-yV9" firstAttribute="top" secondItem="bsv-DI-dZI" secondAttribute="bottom" constant="8" id="lbC-c9-sDA"/>
+                            <constraint firstItem="8q3-E2-mGv" firstAttribute="leading" secondItem="UZ3-fN-6jo" secondAttribute="trailing" constant="76" id="piQ-f8-TRS"/>
+                            <constraint firstItem="Y5h-uQ-h9C" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leading" id="qOp-jl-p6o"/>
+                            <constraint firstItem="Fb9-zv-Viw" firstAttribute="leading" secondItem="HHq-rq-wJR" secondAttribute="leadingMargin" constant="66" id="r4M-DT-imU"/>
+                            <constraint firstItem="LxR-9v-FQA" firstAttribute="top" secondItem="UZ3-fN-6jo" secondAttribute="bottom" constant="76" id="ruO-Fi-W6j"/>
+                            <constraint firstItem="UZ3-fN-6jo" firstAttribute="top" secondItem="Ek7-TU-Jnh" secondAttribute="bottom" constant="15" id="uql-D0-2gP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="challengesChooser" destination="Ek7-TU-Jnh" id="vrg-me-CxQ"/>
+                        <outlet property="endDateButton" destination="zlV-hr-lQg" id="oeM-4w-yWE"/>
+                        <outlet property="eventName" destination="Fb9-zv-Viw" id="jf2-Tq-arB"/>
+                        <outlet property="startDateButton" destination="bsv-DI-dZI" id="mbB-9u-WcW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOB-Gk-y8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="1179.7601199400301"/>
+        </scene>
         <!--Water-->
         <scene sceneID="Qfc-d5-cgN">
             <objects>
@@ -922,10 +1053,10 @@
             </objects>
             <point key="canvasLocation" x="3374" y="-370"/>
         </scene>
-        <!--Sleep Details-->
+        <!--Sleeping-->
         <scene sceneID="qNc-qc-Sfq">
             <objects>
-                <viewController storyboardIdentifier="SleepingVC" id="IyS-Av-JTM" customClass="SleepDetails" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SleepingVC" title="Sleeping" id="IyS-Av-JTM" customClass="SleepDetails" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qky-wE-DO1"/>
                         <viewControllerLayoutGuide type="bottom" id="oFz-No-XdX"/>
