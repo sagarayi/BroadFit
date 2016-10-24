@@ -247,6 +247,7 @@
 				TargetAttributes = {
 					6CCCE01F1DA24CEA001ACB9E = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4LCA2B76T2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -476,6 +477,7 @@
 			baseConfigurationReference = 5B0B1ADAEA9E6B62DF47A5BF /* Pods-BroadFit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4LCA2B76T2;
 				INFOPLIST_FILE = BroadFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.broadsoft.BroadFitCopy;
@@ -488,6 +490,7 @@
 			baseConfigurationReference = 142C53AE0DCCBE372E2CA23A /* Pods-BroadFit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4LCA2B76T2;
 				INFOPLIST_FILE = BroadFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.broadsoft.BroadFitCopy;

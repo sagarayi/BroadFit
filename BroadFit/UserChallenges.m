@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.title = @"MY CHALLENGES";
-
+    self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     NSString *userID = [FIRAuth auth].currentUser.uid;

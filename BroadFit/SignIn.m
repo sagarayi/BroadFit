@@ -20,6 +20,8 @@
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
+    _usernameTextField.delegate=self;
+    _passwordTextField.delegate=self;
 }
 //-(void)viewDidAppear:(BOOL)animated
 //{
@@ -32,6 +34,20 @@
 //        
 //    }
 //}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    UIResponder *nextResponder=[textField.superview viewWithTag:101];
+     if(textField.tag == 100)
+    {
+        [nextResponder becomeFirstResponder];
+    }
+    else  if(textField.tag == 101)
+    {
+        [textField resignFirstResponder];
+        [self signInUser];
+    }
+    return YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -39,9 +55,8 @@
 
 // Call the connection handler to sign the user In
 
-- (IBAction)signIn:(id)sender {
-    
-
+-(void)signInUser
+{
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 2.0;
     _activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
@@ -58,6 +73,11 @@
     connectionHandler.delegate = self;
     [connectionHandler signInWithData:user];
 
+}
+- (IBAction)signIn:(id)sender {
+    
+    [self signInUser];
+   
 }
 
 // Delegate returned by connection handler, indicating failure during sign In Process

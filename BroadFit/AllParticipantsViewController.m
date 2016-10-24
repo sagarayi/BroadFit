@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    // Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated
+{
     _allUsers = [[NSMutableDictionary alloc]init];
     _usersInChallenge = [[NSMutableDictionary alloc]init];
     _eachUser = [[NSMutableDictionary alloc]init];
@@ -34,9 +39,7 @@
     [acceptEventAlert addAction:okButton];
     [self presentViewController:acceptEventAlert animated:YES completion:nil];
     
-    // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
