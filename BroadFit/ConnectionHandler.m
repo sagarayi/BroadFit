@@ -8,6 +8,7 @@
 
 #import "ConnectionHandler.h"
 #import "CalendarViewController.h"
+#import "AllParticipantsViewController.h"
 #define kAllChallenges "AllChallenges"
 static ConnectionHandler *instance;
 @implementation ConnectionHandler
@@ -132,7 +133,18 @@ static ConnectionHandler *instance;
 }
 
 
-
+- (void) fetchAllUsersForEvent:(NSString *)eventName{
+    
+    FIRDatabaseReference *reference = [[[FIRDatabase database]reference]child:@"Users"];
+    [reference observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        
+        if([self.delegate respondsToSelector:@selector(didFetchUsers:)])
+            [self.delegate didFetchUsers:snapshot.value];
+    }];
+    
+    
+    
+}
 - (void) storeToFirebase:(NSDictionary *)walkingDetails{
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];

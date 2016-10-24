@@ -32,7 +32,7 @@
 - (void) deleteChallenge:(NSString *)challenge forUser:(NSString *)user;
 - (void)addEventDetails:(NSString*)eventName containing:(NSArray*)challenges from:(NSString*)startDate till:(NSString*)endDate with:(NSArray*)imageList and:(NSDictionary*)challengeId;
 - (void)fetchImages;
-
+- (void) fetchAllUsersForEvent:(NSString *)eventName;
 
 
 

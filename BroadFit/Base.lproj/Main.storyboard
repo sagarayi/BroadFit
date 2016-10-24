@@ -1121,12 +1121,30 @@
                     <view key="view" contentMode="scaleToFill" id="Qb7-EP-GI8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KiL-J6-IVy">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GUQ-o4-WS5" id="feW-Kf-ZlR"/>
+                                    <outlet property="delegate" destination="GUQ-o4-WS5" id="xJ4-oM-4g0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KiL-J6-IVy" secondAttribute="trailing" id="IWk-1V-RWd"/>
+                            <constraint firstItem="OCl-u2-88t" firstAttribute="top" secondItem="KiL-J6-IVy" secondAttribute="bottom" id="Qee-F0-oxO"/>
+                            <constraint firstItem="KiL-J6-IVy" firstAttribute="leading" secondItem="Qb7-EP-GI8" secondAttribute="leading" id="Qv7-KQ-y9j"/>
+                            <constraint firstItem="KiL-J6-IVy" firstAttribute="top" secondItem="Qb7-EP-GI8" secondAttribute="top" id="yIH-uz-2m5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="participantsTable" destination="KiL-J6-IVy" id="tJK-3l-6xN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcd-ia-ZkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4278" y="795"/>
+            <point key="canvasLocation" x="4277.6000000000004" y="794.75262368815595"/>
         </scene>
         <!--Slide View Controller-->
         <scene sceneID="pIO-v1-eO5">
