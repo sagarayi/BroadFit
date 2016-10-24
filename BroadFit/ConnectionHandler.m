@@ -52,6 +52,18 @@ static ConnectionHandler *instance;
     
 }
 
+- (void) fetchAllUsersForEvent:(NSString *)eventName{
+    
+    FIRDatabaseReference *reference = [[[FIRDatabase database]reference]child:@"Users"];
+    [reference observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        
+        if([self.delegate respondsToSelector:@selector(didFetchUsers:)])
+            [self.delegate didFetchUsers:snapshot.value];
+    }];
+    
+    
+    
+}
 
 - (void) signInWithData:(NSDictionary *)user{
     [[FIRAuth auth] signInWithEmail:[user objectForKey:@"emailID"]

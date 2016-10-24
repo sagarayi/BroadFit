@@ -45,8 +45,8 @@
     EventCreationViewController *eventCreator=[storyBoard instantiateViewControllerWithIdentifier:@"EventCreation"];
     
     if(_admin)
-        menuController = [menuController initWithViewControllers:@[self,calendarController,eventCreator,sign]
-                                                   andMenuTitles:@[[[NSUserDefaults standardUserDefaults]objectForKey:@"UserName"], @"Calendar",@"Create Event",@"Signout"]];
+        menuController = [menuController initWithViewControllers:@[self,calendarController,eventCreator,allParticpants,sign]
+                                                   andMenuTitles:@[[[NSUserDefaults standardUserDefaults]objectForKey:@"UserName"], @"Calendar",@"Create Event",@"All Participants",@"Signout"]];
     
     else
         menuController = [menuController initWithViewControllers:@[self,calendarController,sign]

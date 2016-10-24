@@ -1121,8 +1121,40 @@
                     <view key="view" contentMode="scaleToFill" id="Qb7-EP-GI8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-rb-WHc">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="c1p-43-abz"/>
+                                    <constraint firstAttribute="height" constant="667" id="uim-Fy-ct3"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParticipantsCell" id="6yV-c5-b2r">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6yV-c5-b2r" id="ZhG-c8-Fpe">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GUQ-o4-WS5" id="4H2-5M-xYd"/>
+                                    <outlet property="delegate" destination="GUQ-o4-WS5" id="Rqf-sP-wxj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0cd-rb-WHc" secondAttribute="trailing" constant="-16" id="Ivf-bz-GQX"/>
+                            <constraint firstItem="0cd-rb-WHc" firstAttribute="leading" secondItem="Qb7-EP-GI8" secondAttribute="leadingMargin" constant="-16" id="QrG-tn-wZg"/>
+                            <constraint firstItem="OCl-u2-88t" firstAttribute="top" secondItem="0cd-rb-WHc" secondAttribute="bottom" id="h1v-mW-is2"/>
+                            <constraint firstItem="0cd-rb-WHc" firstAttribute="top" secondItem="Aky-Dd-EhK" secondAttribute="bottom" constant="-20" id="uov-nh-vOH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="participantsTable" destination="0cd-rb-WHc" id="8Uo-Da-Cf9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcd-ia-ZkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
