@@ -191,8 +191,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-fetchAllUsersForEvent:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ConnectionHandler fetchAllUsersForEvent:]"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/ConnectionHandler.m"
+                  timestampString = "498985222.164323"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "186">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[ConnectionHandler fetchAllUsersForEvent:]_block_invoke"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/ConnectionHandler.m"
+                  timestampString = "498985222.165693"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,7 +239,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
             endingLineNumber = "144"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-fetchAllUsersForEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -239,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-fetchAllUsersForEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -426,7 +458,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498854776.906627"
+                  timestampString = "498985222.196214"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
@@ -441,7 +473,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498854776.90782"
+                  timestampString = "498985222.197877"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
@@ -474,7 +506,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498854776.910462"
+                  timestampString = "498985222.200633"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -489,7 +521,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498854776.911787"
+                  timestampString = "498985222.201856"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -735,7 +767,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
             endingLineNumber = "198"
-            landmarkName = "-fetchListOfChallenges"
+            landmarkName = "-setNumberOfParticipants:has:setValue:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -751,7 +783,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
             endingLineNumber = "194"
-            landmarkName = "-fetchListOfChallenges"
+            landmarkName = "-setNumberOfParticipants:has:setValue:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -767,7 +799,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
             endingLineNumber = "197"
-            landmarkName = "-fetchListOfChallenges"
+            landmarkName = "-setNumberOfParticipants:has:setValue:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
