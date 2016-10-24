@@ -11,5 +11,5 @@
 @interface TabBarController : UITabBarController
 @property UIWindow * window;
 @property UIView *menuView;
-
+-(void)adminStatus:(BOOL)result;
 @end

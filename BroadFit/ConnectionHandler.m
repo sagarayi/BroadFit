@@ -9,6 +9,7 @@
 #import "ConnectionHandler.h"
 #import "CalendarViewController.h"
 #import "AllParticipantsViewController.h"
+#import "TabBarController.h"
 #define kAllChallenges "AllChallenges"
 static ConnectionHandler *instance;
 @implementation ConnectionHandler
@@ -133,18 +134,6 @@ static ConnectionHandler *instance;
 }
 
 
-- (void) fetchAllUsersForEvent:(NSString *)eventName{
-    
-    FIRDatabaseReference *reference = [[[FIRDatabase database]reference]child:@"Users"];
-    [reference observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
-        
-        if([self.delegate respondsToSelector:@selector(didFetchUsers:)])
-            [self.delegate didFetchUsers:snapshot.value];
-    }];
-    
-    
-    
-}
 - (void) storeToFirebase:(NSDictionary *)walkingDetails{
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
@@ -158,6 +147,28 @@ static ConnectionHandler *instance;
     [[rootReference child:@"Number Of Steps"] setValue:[walkingDetails objectForKey:@"steps"]];
     [[rootReference child:@"Distance"] setValue:[walkingDetails objectForKey:@"distance"]];
 
+}
+
+-(void)isAdmin:(NSString *)userID
+{
+    __block NSString *uid;
+    FIRDatabaseReference *ref=[[[FIRDatabase database]reference]child:@"Admin"];
+    FIRDatabaseQuery *query=[ref queryOrderedByKey];
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
+     {
+         uid=snapshot.value;
+         if(self.delegate && [self.delegate respondsToSelector:@selector(adminStatus:)])
+         {
+             if([uid isEqualToString:userID])
+                 [self.delegate adminStatus:true];
+             else
+                 [self.delegate adminStatus:false];
+         }
+             
+         
+     }];
+    
+        
 }
 
 -(void)updateChallengeDetails:(NSString*)challengeName and:(NSArray*)detailName with:(NSArray*)detailValues

@@ -38,7 +38,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SlideViewController.m"
@@ -102,7 +102,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SlideViewController.m"
@@ -134,7 +134,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SignIn.m"
@@ -150,7 +150,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SignIn.m"
@@ -186,92 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/ConnectionHandler.m"
-            timestampString = "498853012.759278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "-fetchAllUsersForEvent:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ConnectionHandler fetchAllUsersForEvent:]"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/ConnectionHandler.m"
-                  timestampString = "498985222.164323"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "186">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[ConnectionHandler fetchAllUsersForEvent:]_block_invoke"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/ConnectionHandler.m"
-                  timestampString = "498985222.165693"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BroadFit/ConnectionHandler.m"
-            timestampString = "498853012.759278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "-fetchAllUsersForEvent:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BroadFit/ConnectionHandler.m"
-            timestampString = "498853012.759278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-storeToFirebase:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BroadFit/ConnectionHandler.m"
-            timestampString = "498853012.759278"
+            timestampString = "498986363.743848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "-fetchAllUsersForEvent:"
+            landmarkName = "-storeToFirebase:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -294,7 +214,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SlideViewController.m"
@@ -458,7 +378,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498985222.196214"
+                  timestampString = "498986866.277118"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
@@ -473,7 +393,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498985222.197877"
+                  timestampString = "498986866.27836"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
@@ -506,7 +426,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498985222.200633"
+                  timestampString = "498986866.281237"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -521,7 +441,7 @@
                   moduleName = "BroadFit"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "498985222.201856"
+                  timestampString = "498986866.282483"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -694,54 +614,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BroadFit/TabBarController.m"
-            timestampString = "498856108.731375"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BroadFit/TabBarController.m"
-            timestampString = "498856108.731375"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BroadFit/TabBarController.m"
-            timestampString = "498856108.731375"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -762,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/ConnectionHandler.m"
-            timestampString = "498853012.759278"
+            timestampString = "498986363.743848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "-setNumberOfParticipants:has:setValue:"
             landmarkType = "7">
          </BreakpointContent>
@@ -778,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/ConnectionHandler.m"
-            timestampString = "498853012.759278"
+            timestampString = "498986363.743848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "-setNumberOfParticipants:has:setValue:"
             landmarkType = "7">
          </BreakpointContent>
@@ -794,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/ConnectionHandler.m"
-            timestampString = "498853012.759278"
+            timestampString = "498986363.743848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "-setNumberOfParticipants:has:setValue:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1055,6 +927,38 @@
             startingLineNumber = "114"
             endingLineNumber = "114"
             landmarkName = "-createEvent:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/ConnectionHandler.m"
+            timestampString = "498986337.508051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-isAdmin:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/ConnectionHandler.m"
+            timestampString = "498986338.111053"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-isAdmin:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
