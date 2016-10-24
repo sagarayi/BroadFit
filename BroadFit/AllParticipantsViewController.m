@@ -33,6 +33,13 @@
     UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         
         _eventName =[ [acceptEventAlert textFields][0] text];
+        if([_eventName isEqualToString:@""])
+        {
+            [self dismissViewControllerAnimated:YES completion:^(void)
+             {
+                 [self presentViewController:acceptEventAlert animated:YES completion:nil];
+             }];
+        }
         [self fetchUsers];
         [self fetchChallenges];
     }];
