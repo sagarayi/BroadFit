@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.title = @"MY CHALLENGES";
+    
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
@@ -83,7 +83,7 @@
     [super viewWillDisappear:animated];
 }
 - (void) viewDidAppear:(BOOL)animated{
-    
+    [[[self.navigationController navigationBar] topItem] setTitle:@"My Challenges"];
     self.tabBarController.tabBar.hidden = NO;
     
 }

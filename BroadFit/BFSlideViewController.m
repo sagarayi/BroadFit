@@ -37,7 +37,12 @@
                 [tempVCs addObject:[[UINavigationController alloc] initWithRootViewController:vc]];
             else
                 [tempVCs addObject:vc];
-            UIBarButtonItem *revealMenuBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(toggleMenuVisibility:)];
+            UIImage *image=[UIImage imageNamed:@"bar button"];
+            UIBarButtonItem *revealMenuBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(toggleMenuVisibility:)];
+            [revealMenuBarButtonItem setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefaultPrompt];
+//            [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(toggleMenuVisibility:)];
+//            [[[self.navigationController navigationBar]topItem]setLeftBarButtonItem:revealMenuBarButtonItem];
+//
             UIViewController *topVC = ((UINavigationController *)tempVCs.lastObject).topViewController;
             topVC.navigationItem.leftBarButtonItems = [@[revealMenuBarButtonItem] arrayByAddingObjectsFromArray:topVC.navigationItem.leftBarButtonItems];
         }

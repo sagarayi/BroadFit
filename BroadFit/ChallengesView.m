@@ -21,7 +21,7 @@
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     [self.joinButton setHidden:YES];
     
-    [[[self.navigationController navigationBar] topItem] setTitle:@"Challenges"];
+    
     [[[self.navigationController navigationBar] topItem] setHidesBackButton:YES];
     [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
     //FETCH ALL CHALLENGES
@@ -43,6 +43,7 @@
 - (void) viewDidAppear:(BOOL)animated{
     
     self.tabBarController.tabBar.hidden = NO;
+    [[[self.navigationController navigationBar] topItem] setTitle:@"Challenges"];
 //    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
 }
 -(void)viewWillAppear:(BOOL)animated

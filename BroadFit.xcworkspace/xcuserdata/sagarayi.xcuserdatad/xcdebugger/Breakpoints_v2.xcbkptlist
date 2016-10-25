@@ -550,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/ChallengesView.m"
-            timestampString = "499098198.820066"
+            timestampString = "499110489.096678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1219,11 +1219,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/BFSlideViewController.m"
-            timestampString = "499095011.489217"
+            timestampString = "499110116.952067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -1235,11 +1235,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/BFSlideViewController.m"
-            timestampString = "499095011.489217"
+            timestampString = "499110116.952067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -1251,11 +1251,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/BFSlideViewController.m"
-            timestampString = "499095011.489217"
+            timestampString = "499110116.952067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -1267,11 +1267,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/BFSlideViewController.m"
-            timestampString = "499095011.489217"
+            timestampString = "499110116.952067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -1283,11 +1283,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/BFSlideViewController.m"
-            timestampString = "499095423.79009"
+            timestampString = "499110116.952067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
