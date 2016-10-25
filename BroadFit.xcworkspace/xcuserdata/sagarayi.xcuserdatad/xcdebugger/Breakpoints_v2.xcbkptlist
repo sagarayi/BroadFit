@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SignIn.m"
-            timestampString = "499001894.541108"
+            timestampString = "499085106.789249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -175,7 +175,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "-fetchMyChallenges:"
+            landmarkName = "-storeToFirebase:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -337,6 +337,38 @@
             endingLineNumber = "81"
             landmarkName = "-didFetchChallenges:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CalendarViewController didFetchChallenges:]"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit%201.1/BroadFit/CalendarViewController.m"
+                  timestampString = "499085367.767166"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1402">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CalendarViewController didFetchChallenges:]"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit%201.1/BroadFit/CalendarViewController.m"
+                  timestampString = "499085367.768337"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1417">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -353,38 +385,6 @@
             endingLineNumber = "86"
             landmarkName = "-didFetchChallenges:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CalendarViewController didFetchChallenges:]"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "499063160.494603"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "1402">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CalendarViewController didFetchChallenges:]"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "499063160.496122"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "1417">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -401,38 +401,6 @@
             endingLineNumber = "94"
             landmarkName = "-didFetchChallenges:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CalendarViewController didFetchChallenges:]"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "499063160.49869"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "1836">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CalendarViewController didFetchChallenges:]"
-                  moduleName = "BroadFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sagarayi/Documents/BroadFit/BroadFit/CalendarViewController.m"
-                  timestampString = "499063160.500187"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "1844">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -558,9 +526,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
+            endingLineNumber = "168">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -574,9 +540,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
+            endingLineNumber = "170">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -623,7 +587,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
             endingLineNumber = "212"
-            landmarkName = "-setNumberOfParticipants:has:setValue:"
+            landmarkName = "-fetchListOfChallenges"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -639,7 +603,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
             endingLineNumber = "208"
-            landmarkName = "-setNumberOfParticipants:has:setValue:"
+            landmarkName = "-fetchListOfChallenges"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -655,7 +619,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
             endingLineNumber = "211"
-            landmarkName = "-setNumberOfParticipants:has:setValue:"
+            landmarkName = "-fetchListOfChallenges"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -687,7 +651,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "-setStartDate:"
+            landmarkName = "-setEndDate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -703,7 +667,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "-presentDatePickerAlert:"
+            landmarkName = "-createEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -926,8 +890,55 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "-storeToFirebase:"
+            landmarkName = "-isAdmin:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[ConnectionHandler isAdmin:]_block_invoke_2"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit%201.1/BroadFit/ConnectionHandler.m"
+                  timestampString = "499085367.807418"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "471">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.252"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit%201.1/BroadFit/ConnectionHandler.m"
+                  timestampString = "499085367.808618"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.253"
+                  moduleName = "BroadFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagarayi/Documents/BroadFit%201.1/BroadFit/ConnectionHandler.m"
+                  timestampString = "499085367.809945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -953,12 +964,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SignIn.m"
-            timestampString = "499002281.935462"
+            timestampString = "499085106.789249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-textFieldShouldReturn:"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-didReceiveMemoryWarning"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -969,12 +980,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BroadFit/SignIn.m"
-            timestampString = "499002282.570134"
+            timestampString = "499085106.789249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-textFieldShouldReturn:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-signInUser"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1006,7 +1017,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
             endingLineNumber = "166"
-            landmarkName = "-isAdmin:"
+            landmarkName = "-updateChallengeDetails:and:with:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1102,6 +1113,102 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "-setMenuItems"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/BFTabBarController.m"
+            timestampString = "499082307.115175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-setMenuItems"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/BFTabBarController.m"
+            timestampString = "499083026.900341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-setMenuItems"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/ConnectionHandler.m"
+            timestampString = "499083131.58321"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "-setNumberOfParticipants:has:setValue:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/SignIn.m"
+            timestampString = "499084323.341159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-signInSuccessful"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/SignIn.m"
+            timestampString = "499084323.827953"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "-signInSuccessful"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BroadFit/SignIn.m"
+            timestampString = "499084324.336579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "-signInSuccessful"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

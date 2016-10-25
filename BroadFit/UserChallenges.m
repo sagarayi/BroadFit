@@ -34,8 +34,7 @@
 }
 
 - (void) didFetchChallenges:(NSDictionary *)challenges{
-    NSDictionary *challengesEnrolled = [challenges objectForKey:@"challenges enrolled"];
-    if(challengesEnrolled == NULL || [challengesEnrolled isKindOfClass:[NSNull class]]){
+    if(challenges == NULL || [challenges isKindOfClass:[NSNull class]]){
         
         UIAlertController *noEventsAlert = [UIAlertController
                                     alertControllerWithTitle:@"NO CHALLENGES"
@@ -48,7 +47,7 @@
                                 {
                                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
                                     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                    [self presentViewController:viewController animated:YES completion:nil];
+                                    [self presentViewController:viewController animated:NO completion:nil];
                                 }];
         [noEventsAlert addAction:okButton];
         [self presentViewController:noEventsAlert animated:YES completion:nil];
@@ -143,7 +142,7 @@
                                        {
                                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
                                            UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                           [self presentViewController:viewController animated:YES completion:nil];
+                                           [self presentViewController:viewController animated:NO completion:nil];
                                        }];
             [noEventsAlert addAction:okButton];
             [self presentViewController:noEventsAlert animated:YES completion:nil];

@@ -18,8 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
+//    [[NSUserDefaults standardUserDefaults]removeObjectforKey:@"UserName"];
     _usernameTextField.delegate=self;
     _passwordTextField.delegate=self;
 }
@@ -41,7 +42,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = TRUE;
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = FALSE;
+}
 
 // Call the connection handler to sign the user In
 
@@ -97,7 +105,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self.navigationController pushViewController:viewController animated:NO];
 }
 
 @end
