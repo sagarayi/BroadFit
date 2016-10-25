@@ -21,7 +21,7 @@
 //    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"Username"];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
-    
+//    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
 //    [[NSUserDefaults standardUserDefaults]removeObjectforKey:@"UserName"];
     _usernameTextField.delegate=self;
     _passwordTextField.delegate=self;

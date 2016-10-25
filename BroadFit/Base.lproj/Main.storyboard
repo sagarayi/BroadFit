@@ -376,8 +376,8 @@
                         <viewControllerLayoutGuide type="top" id="X58-JU-dp8"/>
                         <viewControllerLayoutGuide type="bottom" id="vOA-7L-jf4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HT9-9G-Nwh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="HT9-9G-Nwh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M6o-bf-d6F">
@@ -435,6 +435,7 @@
                             <constraint firstItem="M6o-bf-d6F" firstAttribute="top" secondItem="X58-JU-dp8" secondAttribute="bottom" constant="-64" id="zYW-m8-Ka0"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="I7v-fL-u8e"/>
                     <navigationItem key="navigationItem" title="My Challenges" id="M7M-Nj-MFE">
                         <barButtonItem key="leftBarButtonItem" image="bar button" style="plain" id="dVj-8x-JCV">
@@ -744,7 +745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMj-bb-OG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3407.1999999999998" y="-372.86356821589209"/>
+            <point key="canvasLocation" x="3655" y="-376"/>
         </scene>
         <!--Breakfast-->
         <scene sceneID="ir7-gF-56y">
@@ -820,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXc-U7-iMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3407.1999999999998" y="498.80059970014997"/>
+            <point key="canvasLocation" x="3654" y="499"/>
         </scene>
         <!--EventCreation-->
         <scene sceneID="uho-cD-NDu">
@@ -977,7 +978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOB-Gk-y8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4831.1999999999998" y="-5.8470764617691158"/>
+            <point key="canvasLocation" x="5881" y="-375"/>
         </scene>
         <!--Water-->
         <scene sceneID="Qfc-d5-cgN">
@@ -1077,7 +1078,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p3-vf-Ihp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3864.8000000000002" y="-373.76311844077964"/>
+            <point key="canvasLocation" x="4383" y="-376"/>
         </scene>
         <!--Sleeping-->
         <scene sceneID="qNc-qc-Sfq">
@@ -1134,7 +1135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3B9-fs-8ra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4036" y="498.80059970014997"/>
+            <point key="canvasLocation" x="4382" y="499"/>
         </scene>
         <!--All Participants View Controller-->
         <scene sceneID="aJP-SG-POZ">
@@ -1184,7 +1185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcd-ia-ZkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4647.1999999999998" y="498.80059970014997"/>
+            <point key="canvasLocation" x="5150" y="499"/>
         </scene>
         <!--Slide View Controller-->
         <scene sceneID="pIO-v1-eO5">
@@ -1298,14 +1299,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiI-7e-DfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4556" y="-374.66266866566718"/>
+            <point key="canvasLocation" x="5151" y="-376"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="84i-He-NHM">
             <objects>
                 <navigationController storyboardIdentifier="SlideNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="QaV-4W-2W6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OKu-do-Jv5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OKu-do-Jv5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1323,7 +1324,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MZN-mH-nk8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0GR-lu-W0k">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0GR-lu-W0k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1339,7 +1340,7 @@
     </scenes>
     <resources>
         <image name="=plus1" width="512" height="512"/>
-        <image name="background" width="375" height="667"/>
+        <image name="background" width="250" height="445"/>
         <image name="bar button" width="42" height="38"/>
         <image name="breakfast" width="640" height="360"/>
         <image name="drinkwater (1)" width="213" height="216"/>

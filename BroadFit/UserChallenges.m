@@ -23,7 +23,18 @@
     connectionHandler.delegate = self;
     NSString *userID = [FIRAuth auth].currentUser.uid;
     [connectionHandler fetchMyChallenges:userID];
-    [[[self.navigationController navigationBar] topItem] setTitle:@"My Challenges"];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    float rd = 30.00/255.00;
+    float gr = 164.00/255.00;
+    float bl = 176.00/255.00;
+//   self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.barStyle=UIBarStyleOp;
+//    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
+    
     //ADD ACTIVITY INDICATOR
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 1.0;
@@ -73,6 +84,7 @@
 - (void) viewDidAppear:(BOOL)animated{
     
     self.tabBarController.tabBar.hidden = NO;
+    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
