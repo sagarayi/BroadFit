@@ -23,7 +23,7 @@
     connectionHandler.delegate = self;
     NSString *userID = [FIRAuth auth].currentUser.uid;
     [connectionHandler fetchMyChallenges:userID];
-    
+    [[[self.navigationController navigationBar] topItem] setTitle:@"My Challenges"];
     //ADD ACTIVITY INDICATOR
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 1.0;

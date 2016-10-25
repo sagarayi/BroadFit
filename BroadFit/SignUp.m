@@ -19,6 +19,14 @@
     _usernameTextField.delegate=self;
     _emailIdTextField.delegate=self;
     _passwordTextField.delegate=self;
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"Username"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _activityIndicator.alpha = 2.0;
+    _activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    
+    [_activityIndicator startAnimating];
+
 }
 -(void) viewWillAppear:(BOOL)animated
 {
@@ -91,8 +99,9 @@
 
 - (void) signUpSuccessful{
     [_activityIndicator stopAnimating];
-    [[NSUserDefaults standardUserDefaults] setObject:[FIRAuth auth].currentUser.uid forKey:@"UserID"];
+    [[NSUserDefaults standardUserDefaults] setObject:[FIRAuth auth].currentUser.uid forKey:@"userID"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    [[NSUserDefaults standardUserDefaults] setObject:_usernameTextField.text forKey:@"UserName"];
     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
     [self.navigationController pushViewController:viewController animated:NO];
 }

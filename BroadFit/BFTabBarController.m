@@ -27,6 +27,7 @@
     connection.delegate=self;
     [connection isAdmin:[[NSUserDefaults standardUserDefaults] objectForKey:@"userID"]];
     
+    
 }
 
 -(void)setMenuItems

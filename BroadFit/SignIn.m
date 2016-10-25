@@ -19,7 +19,9 @@
     [super viewDidLoad];
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 //    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"Username"];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
+    
 //    [[NSUserDefaults standardUserDefaults]removeObjectforKey:@"UserName"];
     _usernameTextField.delegate=self;
     _passwordTextField.delegate=self;

@@ -20,7 +20,8 @@
     [super viewDidLoad];
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     [self.joinButton setHidden:YES];
-    self.navigationController.title = @"ALL CHALLENGES";
+    
+    [[[self.navigationController navigationBar] topItem] setTitle:@"Challenges"];
     //FETCH ALL CHALLENGES
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;

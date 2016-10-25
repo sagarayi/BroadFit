@@ -584,7 +584,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol2-VB-Sjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367.1999999999998" y="-6.746626686656672"/>
+            <point key="canvasLocation" x="2351" y="-6"/>
         </scene>
         <!--Walking-->
         <scene sceneID="ntM-hk-cqy">
@@ -1221,6 +1221,7 @@
                     <navigationItem key="navigationItem" id="hER-RD-VEa"/>
                     <connections>
                         <outlet property="menu" destination="mDV-Eu-FP8" id="cZA-mN-y1n"/>
+                        <outlet property="userImage" destination="dXa-SU-xsD" id="Nc5-aT-nXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTZ-WN-Wak" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1304,7 +1305,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SlideNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="QaV-4W-2W6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OKu-do-Jv5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OKu-do-Jv5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1322,7 +1323,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MZN-mH-nk8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0GR-lu-W0k">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0GR-lu-W0k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
