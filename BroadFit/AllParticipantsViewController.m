@@ -25,21 +25,18 @@
     _allUsers = [[NSMutableDictionary alloc]init];
     _usersInChallenge = [[NSMutableDictionary alloc]init];
     _eachUser = [[NSMutableDictionary alloc]init];
-    
+    __block UITextField *eventText;
     UIAlertController *acceptEventAlert = [UIAlertController alertControllerWithTitle:@"ENTER EVENT" message:@"Enter the event name" preferredStyle:UIAlertControllerStyleAlert];
     [acceptEventAlert addTextFieldWithConfigurationHandler:^(UITextField *eventNameField){
-        eventNameField.placeholder = @"EventName...";
+        eventNameField.placeholder = @"EventName";
+        eventText=eventNameField;
+       // eventNameField.delegate=self;
+        
     }];
     UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         
         _eventName =[ [acceptEventAlert textFields][0] text];
-        if([_eventName isEqualToString:@""])
-        {
-            [self dismissViewControllerAnimated:YES completion:^(void)
-             {
-                 [self presentViewController:acceptEventAlert animated:YES completion:nil];
-             }];
-        }
+       [eventText resignFirstResponder];
         [self fetchUsers];
         [self fetchChallenges];
     }];

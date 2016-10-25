@@ -51,6 +51,7 @@
             
             
        }
+        
         self.viewControllers = [tempVCs copy];
         self.menu.delegate=self;
         self.menu.dataSource=self;
