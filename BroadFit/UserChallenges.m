@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.title = @"MY CHALLENGES";
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
@@ -31,7 +32,7 @@
     float rd = 30.00/255.00;
     float gr = 164.00/255.00;
     float bl = 176.00/255.00;
-//   self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+   
 //    self.navigationController.navigationBar.barStyle=UIBarStyleOp;
 //    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
     
