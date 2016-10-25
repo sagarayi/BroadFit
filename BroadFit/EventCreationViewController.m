@@ -23,6 +23,7 @@
     _startingDate=@"";
     _endingDate=@"";
     _numberOfChallenges=0;
+    _eventName.delegate=self;
     _challengesSelected=[[NSMutableArray alloc]init];
     self.challengesChooser.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.challengesChooser.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
@@ -48,6 +49,12 @@
     _challengeId=listOfChallenges;
     [self.challengesChooser reloadData];
     
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    [textField resignFirstResponder];
+    return YES;
 }
 -(void)didFetchImages:(NSDictionary *)images
 {

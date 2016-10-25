@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ConnectionHandler.h"
-@interface EventCreationViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface EventCreationViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *eventName;
 @property (weak, nonatomic) IBOutlet UITableView *challengesChooser;
 @property (weak, nonatomic) IBOutlet UIButton *startDateButton;

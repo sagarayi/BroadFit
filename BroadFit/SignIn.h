@@ -11,7 +11,7 @@
 #import "ChallengesView.h"
 #import "ConnectionHandler.h"
 
-@interface SignIn : UIViewController
+@interface SignIn : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;

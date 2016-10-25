@@ -51,6 +51,7 @@
             
             
        }
+        
         self.viewControllers = [tempVCs copy];
         self.menu.delegate=self;
         self.menu.dataSource=self;
@@ -81,11 +82,13 @@
     // [self.view addSubview:self.view];// (8)
     
     self.menu.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"background"] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.menu.backgroundColor=[UIColor colorWithPatternImage:image];
+//    UIGraphicsBeginImageContext(self.view.frame.size);
+//    [[UIImage imageNamed:@"background"] drawInRect:self.view.bounds];
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    self.menu.backgroundColor=[UIColor colorWithPatternImage:image];
+//    [self.tabBarController.tabBarItem setBadgeColor:[UIColor redColor] ];
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
     self.menu.separatorStyle=UITableViewCellSeparatorStyleNone;
     
 }

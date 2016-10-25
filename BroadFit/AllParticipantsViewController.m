@@ -17,26 +17,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    // Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated
+{
     _allUsers = [[NSMutableDictionary alloc]init];
     _usersInChallenge = [[NSMutableDictionary alloc]init];
     _eachUser = [[NSMutableDictionary alloc]init];
-    
+    __block UITextField *eventText;
     UIAlertController *acceptEventAlert = [UIAlertController alertControllerWithTitle:@"ENTER EVENT" message:@"Enter the event name" preferredStyle:UIAlertControllerStyleAlert];
     [acceptEventAlert addTextFieldWithConfigurationHandler:^(UITextField *eventNameField){
-        eventNameField.placeholder = @"EventName...";
+        eventNameField.placeholder = @"EventName";
+        eventText=eventNameField;
+       // eventNameField.delegate=self;
+        
     }];
     UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         
         _eventName =[ [acceptEventAlert textFields][0] text];
+       [eventText resignFirstResponder];
         [self fetchUsers];
         [self fetchChallenges];
     }];
     [acceptEventAlert addAction:okButton];
     [self presentViewController:acceptEventAlert animated:YES completion:nil];
     
-    // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

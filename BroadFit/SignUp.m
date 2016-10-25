@@ -16,11 +16,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _usernameTextField.delegate=self;
+    _emailIdTextField.delegate=self;
+    _passwordTextField.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSInteger nextTag=textField.tag+1;
+//    UIResponder *nextResponder=
+    
+
+    if(textField.tag == 1000)
+    {
+        [[textField.superview viewWithTag:1001] becomeFirstResponder];
+    }
+    else  if(textField.tag == 1001)
+    {
+        [[textField.superview viewWithTag:1002] becomeFirstResponder];
+        
+    }
+    else  if(textField.tag == 1002)
+    {
+        [textField resignFirstResponder];
+        [self signUpUser];
+    }
+    
+    
+    return YES;
+}
+
 
 //- (void) viewDidAppear:(BOOL)animated{
 //    
@@ -34,9 +62,8 @@
 //}
 
 // Call the connection handler to signUp the user
-
-- (IBAction)signUp:(id)sender {
- 
+-(void)signUpUser
+{
     NSDictionary *user = @{
                            @"emailID" : _emailIdTextField.text,
                            @"password" : _passwordTextField.text,
@@ -46,6 +73,10 @@
     connectionHandler.delegate = self;
     [connectionHandler signUpWithData:user];
 
+}
+- (IBAction)signUp:(id)sender {
+ 
+    [self signUpUser];
 }
 
 

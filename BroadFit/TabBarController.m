@@ -37,10 +37,17 @@
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     
     
-    
+//    NSArray *viewControllers=self.navigationController.viewControllers;
+    SignIn *sign=[storyBoard instantiateViewControllerWithIdentifier:@"Login"];
+//    for(UIViewController *vc in viewControllers)
+//    {
+//        if([vc isKindOfClass:[SignIn class]])
+//            sign=vc;
+//            
+//    }
     SlideViewController *menuController=[storyBoard instantiateViewControllerWithIdentifier:@"tableView"];
     CalendarViewController *calendarController=[storyBoard instantiateViewControllerWithIdentifier:@"Calendar"];
-    SignIn *sign=[storyBoard instantiateViewControllerWithIdentifier:@"Login"];
+    
     AllParticipantsViewController *allParticpants = [storyBoard instantiateViewControllerWithIdentifier:@"AllParticpants"];
     EventCreationViewController *eventCreator=[storyBoard instantiateViewControllerWithIdentifier:@"EventCreation"];
     

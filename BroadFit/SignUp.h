@@ -10,7 +10,7 @@
 #import "Firebase/Firebase.h"
 #import "ConnectionHandler.h"
 #import "Protocol.h"
-@interface SignUp : UIViewController
+@interface SignUp : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailIdTextField;

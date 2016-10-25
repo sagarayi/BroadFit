@@ -18,8 +18,8 @@
 @implementation ChallengesView
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
+    [self.joinButton setHidden:YES];
     self.navigationController.title = @"ALL CHALLENGES";
     //FETCH ALL CHALLENGES
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
@@ -27,7 +27,7 @@
     _EventName = @"Summer Challenges";
     [connectionHandler fetchAllChallenges:_EventName];
     
-    
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     //ADD ACTIVITY INDICATOR
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 1.0;
@@ -53,6 +53,9 @@
     _challenges = [challenges objectForKey:@"Challenges"];
     [self cacheImages:_challenges];
     [_activityIndicator stopAnimating];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+    self.challengeImage.image=[UIImage imageNamed:@"walking"];
+    [self.joinButton setHidden:NO];
     [_tableView reloadData];
 
     
@@ -146,7 +149,7 @@
         
         if(snapshot.value != NULL && ![snapshot.value isKindOfClass:[NSNull class]]&& snapshot.value[_individualChallengeSelected] != NULL && ![data isKindOfClass:[NSNull class]]){
             
-                cell.numberOfParticipants.text = [NSString stringWithFormat:@"%d" ,([cell.numberOfParticipants.text intValue]+1)];
+            cell.numberOfParticipants.text = [NSString stringWithFormat:@"%d" ,([cell.numberOfParticipants.text intValue]+1)];
       
                     [_joinButton setTitle:@"Joined" forState:UIControlStateNormal];
             [_joinButton setEnabled:FALSE];
@@ -174,6 +177,7 @@
         }else{
             
                 [_joinButton setTitle:@"Join" forState:UIControlStateNormal];
+            [_joinButton setEnabled:TRUE];
 //                if([snapshot.value  isEqual: @"Joined"])
 //                        [ref removeAllObservers];
         }
