@@ -376,7 +376,7 @@
                         <viewControllerLayoutGuide type="top" id="X58-JU-dp8"/>
                         <viewControllerLayoutGuide type="bottom" id="vOA-7L-jf4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="HT9-9G-Nwh">
+                    <view key="view" contentMode="scaleToFill" id="HT9-9G-Nwh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -385,10 +385,10 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeCell" rowHeight="100" id="Sdp-Wh-5gm" customClass="TableCell">
-                                        <rect key="frame" x="0.0" y="28" width="383" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sdp-Wh-5gm" id="TZp-IP-inQ">
-                                            <frame key="frameInset" width="383" height="99"/>
+                                            <frame key="frameInset" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-Ng-nlq">
@@ -429,10 +429,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="M6o-bf-d6F" secondAttribute="trailing" constant="-20" id="G34-zx-HYA"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="M6o-bf-d6F" secondAttribute="leading" constant="20" id="cpY-v5-Yii"/>
-                            <constraint firstItem="vOA-7L-jf4" firstAttribute="top" secondItem="M6o-bf-d6F" secondAttribute="bottom" constant="-49" id="eg8-EP-ONg"/>
-                            <constraint firstItem="M6o-bf-d6F" firstAttribute="top" secondItem="X58-JU-dp8" secondAttribute="bottom" constant="-64" id="zYW-m8-Ka0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M6o-bf-d6F" secondAttribute="trailing" constant="-16" id="G34-zx-HYA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="M6o-bf-d6F" secondAttribute="leading" constant="16" id="cpY-v5-Yii"/>
+                            <constraint firstItem="vOA-7L-jf4" firstAttribute="top" secondItem="M6o-bf-d6F" secondAttribute="bottom" constant="-52" id="eg8-EP-ONg"/>
+                            <constraint firstItem="M6o-bf-d6F" firstAttribute="top" secondItem="X58-JU-dp8" secondAttribute="bottom" constant="-9" id="zYW-m8-Ka0"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -1306,7 +1306,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SlideNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="QaV-4W-2W6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OKu-do-Jv5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OKu-do-Jv5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1324,7 +1324,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MZN-mH-nk8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0GR-lu-W0k">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0GR-lu-W0k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
