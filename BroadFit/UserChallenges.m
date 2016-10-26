@@ -34,8 +34,8 @@
 }
 
 - (void) didFetchChallenges:(NSDictionary *)challenges{
-    NSDictionary *challengesEnrolled = [challenges objectForKey:@"challenges enrolled"];
-    if(challengesEnrolled == NULL || [challengesEnrolled isKindOfClass:[NSNull class]]){
+    
+    if(challenges == NULL || [challenges isKindOfClass:[NSNull class]]){
         
         UIAlertController *noEventsAlert = [UIAlertController
                                     alertControllerWithTitle:@"NO CHALLENGES"
@@ -48,12 +48,11 @@
                                 {
                                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
                                     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                    [self presentViewController:viewController animated:YES completion:nil];
+                                    [self.navigationController pushViewController:viewController animated:NO];
                                 }];
         [noEventsAlert addAction:okButton];
         [self presentViewController:noEventsAlert animated:YES completion:nil];
     }else{
-    
         _myChallenges = [challenges objectForKey:@"challenges enrolled"];
         [_activityIndicator stopAnimating];
         [_tableView reloadData];
@@ -73,6 +72,7 @@
 }
 - (void) viewDidAppear:(BOOL)animated{
     
+    [[[self.navigationController navigationBar] topItem] setTitle:@"My Challenges"];
     self.tabBarController.tabBar.hidden = NO;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -126,7 +126,8 @@
     if(editingStyle == UITableViewCellEditingStyleDelete){
         ConnectionHandler *handler = [ConnectionHandler sharedInstance];
         [handler deleteChallenge:[[_myChallenges allKeys]objectAtIndex:indexPath.row] forUser:[FIRAuth auth].currentUser.uid];
-        [handler setNumberOfParticipants:@"Event1" has:[[_myChallenges allKeys]objectAtIndex:indexPath.row] setValue:-1];
+        NSString *eventname = [[NSUserDefaults standardUserDefaults]valueForKey:@"Eventname"];
+        [handler setNumberOfParticipants:eventname has:[[_myChallenges allKeys]objectAtIndex:indexPath.row] setValue:-1];
         NSString *challengeSelected = [[_myChallenges allKeys]objectAtIndex:indexPath.row];
         [_myChallenges removeObjectForKey:challengeSelected];
         [_tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath]

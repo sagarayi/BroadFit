@@ -22,9 +22,10 @@
 @property UIActivityIndicatorView *activityIndicator;
 @property NSString *individualChallengeSelected;
 @property NSString *EventName;
-
+@property BOOL eventAvailabilityStatus;
 - (IBAction)join:(id)sender;
 - (void) challengesRecieved:(NSDictionary *)challenges;
-
-
+- (void) didRecieveActiveEvent:(NSString *)activeEvent;
+- (void) didRecieveEventAvailability:(BOOL)status;
+- (void) userHasNotEnrolled:(BOOL)status;
 @end

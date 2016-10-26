@@ -22,6 +22,43 @@ static ConnectionHandler *instance;
     return instance;
 }
 
+- (void) fetchActiveEvents{
+    __block NSDictionary *allEvents = [[NSDictionary alloc]init];
+    __block NSString *activeEvent = [[NSString alloc]init];
+    __block BOOL enrollFlag = false;
+    FIRDatabaseReference *reference = [[[FIRDatabase database]reference]child:@"Events"];
+    FIRDatabaseQuery *query=[reference queryOrderedByKey];
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        allEvents = snapshot.value;
+        NSArray *eventsArray = [allEvents allKeys];
+        for(NSString *event in eventsArray){
+            
+            NSString *startDate = [[[allEvents objectForKey:event]objectForKey:@"EventDetails"]objectForKey:@"StartDate"];
+            NSString *endDate = [[[allEvents objectForKey:event]objectForKey:@"EventDetails"]objectForKey:@"EndDate"];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            NSDate *currentDate = [NSDate date];
+            [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+            NSDate *startDateFromString = [[NSDate alloc] init];
+            startDateFromString = [dateFormatter dateFromString:startDate];
+            NSDate *endDateFromString = [[NSDate alloc]init];
+            endDateFromString =[dateFormatter dateFromString:endDate];
+            if([currentDate compare:startDateFromString] == NSOrderedAscending)
+                enrollFlag = false;
+            if([currentDate compare:endDateFromString] == NSOrderedDescending)
+                enrollFlag = false;
+            enrollFlag = true;
+            activeEvent = event;
+            
+        }
+        if(enrollFlag == true){
+            if([self.delegate respondsToSelector:@selector(didRecieveActiveEvent:)])
+                [self.delegate didRecieveActiveEvent:activeEvent];
+        }
+    }];
+
+    
+    
+}
 - (void) signUpWithData:(NSDictionary *)user{
         [[FIRAuth auth] createUserWithEmail:[user objectForKey:@"emailID"]
                                password:[user objectForKey:@"password"]
@@ -40,6 +77,7 @@ static ConnectionHandler *instance;
                                      
                                      }
                              }];
+    
 }
 
 - (void) fetchAllUsersForEvent:(NSString *)eventName{
@@ -102,9 +140,15 @@ static ConnectionHandler *instance;
      }];
 }
 
+- (void) enroll:(NSString *)userID forEvent:(NSString *)eventName{
+    
+    FIRDatabaseReference *reference = [[[[FIRDatabase database]reference]child:@"Users"]child:userID];
+    [[reference child:@"Event Enrolled"]setValue:eventName];
+    
+}
 - (void) fetchAllChallenges:(NSString *)eventName{
     
-    FIRDatabaseReference *rootRef= [[[[FIRDatabase database] reference]child:@"Events"]child:@"Event1"];
+    FIRDatabaseReference *rootRef= [[[[FIRDatabase database] reference]child:@"Events"]child:eventName];
     FIRDatabaseQuery *query = [rootRef queryOrderedByChild:@"Challenges"];
     [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
         NSDictionary *challenges = snapshot.value;
@@ -181,7 +225,7 @@ static ConnectionHandler *instance;
 
 -(void)setNumberOfParticipants:(NSString*)eventName has:(NSString*)challengeName setValue:(int)quantity
 {
-    FIRDatabaseReference *reference=[[[[[[[FIRDatabase database]reference] child:@"Events"]child:@"Event1"]child:@"Challenges"]child:challengeName]child:@"Participants"];
+    FIRDatabaseReference *reference=[[[[[[[FIRDatabase database]reference] child:@"Events"]child:eventName]child:@"Challenges"]child:challengeName]child:@"Participants"];
     FIRDatabaseQuery *query=[reference queryOrderedByKey];
      __block NSString *numberOfParticipants;
     [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
@@ -250,5 +294,39 @@ static ConnectionHandler *instance;
     [[reference child:challenge] removeValue];
     
     
+}
+
+- (void) areEventsAvailable{
+    
+    FIRDatabaseReference *reference = [[[FIRDatabase database]reference]child:@"Events"];
+    FIRDatabaseQuery *query=[reference queryOrderedByKey];
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        NSDictionary *eventList = snapshot.value;
+        if(eventList == NULL || [eventList isKindOfClass:[NSNull class]]){
+            if([self.delegate respondsToSelector:@selector(didRecieveEventAvailability:)])
+                [self.delegate didRecieveEventAvailability:NO];
+        }else{
+            if([self.delegate respondsToSelector:@selector(didRecieveEventAvailability:)])
+                [self.delegate didRecieveEventAvailability:YES];
+        }
+  
+    }];
+
+    
+}
+- (void) didUser:(NSString *)userID enrollTo:(NSString *)eventName{
+    
+    FIRDatabaseReference *reference = [[[[[FIRDatabase database]reference]child:@"Users"]child:userID]child:@"Event Enrolled"];
+    FIRDatabaseQuery *query=[reference queryOrderedByKey];
+    [query observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        NSDictionary *eventName = snapshot.value;
+        if(eventName == NULL ||[eventName isKindOfClass:[NSNull class]]){
+            if([self.delegate respondsToSelector:@selector(userHasNotEnrolled:)])
+                [self.delegate userHasNotEnrolled:NO];
+        }else{
+            if([self.delegate respondsToSelector:@selector(userHasNotEnrolled:)])
+                [self.delegate userHasNotEnrolled:YES];
+        }
+    }];
 }
 @end

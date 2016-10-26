@@ -20,10 +20,19 @@
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
+    
     _usernameTextField.delegate=self;
     _passwordTextField.delegate=self;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = TRUE;
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = FALSE;
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     UIResponder *nextResponder=[textField.superview viewWithTag:101];
@@ -97,7 +106,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self.navigationController pushViewController:viewController animated:NO];
 }
 
 @end

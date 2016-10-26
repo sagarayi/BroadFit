@@ -18,28 +18,111 @@
 @implementation ChallengesView
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
-    [self.joinButton setHidden:YES];
-    self.navigationController.title = @"ALL CHALLENGES";
-    //FETCH ALL CHALLENGES
-    ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
-    connectionHandler.delegate = self;
-    _EventName = @"Summer Challenges";
-    [connectionHandler fetchAllChallenges:_EventName];
-    
-    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    //ADD ACTIVITY INDICATOR
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 1.0;
     _activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
     [_activityIndicator startAnimating];
+    self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
+    [self.joinButton setHidden:YES];
+    _eventAvailabilityStatus = NO;
     [self.view addSubview:_activityIndicator];
+    ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
+    connectionHandler.delegate = self;
+    [connectionHandler areEventsAvailable];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [self initialSetup];
+
+
+}
+- (void) initialSetup{
+   
+    //FETCH ALL CHALLENGES
+   
+    if(_eventAvailabilityStatus){
+        ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
+        connectionHandler.delegate = self;
+        [connectionHandler fetchAllChallenges:_EventName];
+    }
+   
+}
+- (void) didRecieveEventAvailability:(BOOL)status{
     
+    if(status == NO){
+        _eventAvailabilityStatus = NO;
+        UIAlertController *noEventsAlert = [UIAlertController
+                                            alertControllerWithTitle:@"NO EVENTS"
+                                            message:@"No events yet.."
+                                            preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okActionButton = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction *action){}];
+        [noEventsAlert addAction:okActionButton];
+        [self presentViewController:noEventsAlert animated:YES completion:nil];
+    
+    }else{
+        _eventAvailabilityStatus = YES;
+        [self fetchEventName];
+
+    }
+}
+- (void) fetchEventName{
+
+    //Fetching all active events
+    ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
+    connectionHandler.delegate = self;
+    [connectionHandler fetchActiveEvents];
+
+}
+- (void) didRecieveActiveEvent:(NSString *)activeEvent{
+    
+    _EventName = activeEvent;
+    NSString *userID = [[NSUserDefaults standardUserDefaults]objectForKey:@"userID"];
+    ConnectionHandler *handler = [ConnectionHandler sharedInstance];
+    handler.delegate =self;
+    [handler didUser:userID enrollTo:_EventName];
+
+    
+}
+- (void) userHasNotEnrolled:(BOOL)status{
+    if(status == NO){
+        
+        NSString *userID = [[NSUserDefaults standardUserDefaults]objectForKey:@"userID"];
+        NSString *alertTitle = [NSString stringWithFormat:@"ACTIVE EVENT:%@",_EventName];
+        [[NSUserDefaults standardUserDefaults]setObject:_EventName forKey:@"Eventname"];
+        UIAlertController *enrollToEventAlert = [UIAlertController
+                                                 alertControllerWithTitle:alertTitle
+                                                 message:@"Press Ok To enroll to event"
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okActionButton = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction *action){
+                                             ConnectionHandler *handler = [ConnectionHandler sharedInstance];
+                                             [handler enroll:userID forEvent:_EventName];
+                                             [self initialSetup];
+                                             
+                                             
+                                         }];
+        UIAlertAction *cancelActionButton = [UIAlertAction
+                                             actionWithTitle:@"CANCEL"
+                                             style:UIAlertActionStyleDefault
+                                             handler:^(UIAlertAction *action){}];
+        [enrollToEventAlert addAction:okActionButton];
+        [enrollToEventAlert addAction:cancelActionButton];
+        [self presentViewController:enrollToEventAlert animated:YES completion:nil];
+    }else{
+        [self initialSetup];
+
+    }
+
     
 }
 - (void) viewDidAppear:(BOOL)animated{
     
     self.tabBarController.tabBar.hidden = NO;
+    [[[self.navigationController navigationBar] topItem] setTitle:@"Challenges"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,7 +257,7 @@
         ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
         NSString *userID = [[NSUserDefaults standardUserDefaults]valueForKey:@"userID"];
         [connectionHandler joinChallenge:_individualChallengeSelected forUser:userID];
-        [connectionHandler setNumberOfParticipants:@"Event1" has:_individualChallengeSelected setValue:1];
+        [connectionHandler setNumberOfParticipants:_EventName has:_individualChallengeSelected setValue:1];
     }
 }
 

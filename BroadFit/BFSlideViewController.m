@@ -166,6 +166,7 @@
 
     if([self.menuTitles[indexPath.row] isEqualToString:@"SignOut"]){
         [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"UserName"];
+      //  [self.navigationController popToRootViewControllerAnimated:NO];
         
     }
     cell.textLabel.text = self.menuTitles[indexPath.row];

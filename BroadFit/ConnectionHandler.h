@@ -34,7 +34,10 @@
 - (void)fetchImages;
 -(void)isAdmin:(NSString *)userID;
 - (void) fetchAllUsersForEvent:(NSString *)eventName;
-
+- (void) fetchActiveEvents;
+- (void) areEventsAvailable;
+- (void) enroll:(NSString *)userID forEvent:(NSString *)eventName;
+- (void) didUser:(NSString *)userID enrollTo:(NSString *)eventName;
 
 
 
