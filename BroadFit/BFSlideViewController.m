@@ -13,6 +13,7 @@
 @interface BFSlideViewController ()
 @property (nonatomic, strong) NSArray *viewControllers;
 @property (nonatomic, strong) NSArray *menuTitles;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
 @property (nonatomic, assign) NSInteger indexOfVisibleController;
 
@@ -36,7 +37,12 @@
                 [tempVCs addObject:[[UINavigationController alloc] initWithRootViewController:vc]];
             else
                 [tempVCs addObject:vc];
-            UIBarButtonItem *revealMenuBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(toggleMenuVisibility:)];
+            UIImage *image=[UIImage imageNamed:@"bar button"];
+            UIBarButtonItem *revealMenuBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(toggleMenuVisibility:)];
+            [revealMenuBarButtonItem setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefaultPrompt];
+//            [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(toggleMenuVisibility:)];
+//            [[[self.navigationController navigationBar]topItem]setLeftBarButtonItem:revealMenuBarButtonItem];
+//
             UIViewController *topVC = ((UINavigationController *)tempVCs.lastObject).topViewController;
             topVC.navigationItem.leftBarButtonItems = [@[revealMenuBarButtonItem] arrayByAddingObjectsFromArray:topVC.navigationItem.leftBarButtonItems];
         }
@@ -58,13 +64,29 @@
     [self addChildViewController:visibleViewController];
     [self.view addSubview:visibleViewController.view];
     self.isMenuVisible = NO;
+//    if(!self.isMenuVisible)
+//    {
+//        self.menu.hidden=YES;
+//        self.userImage.hidden=YES;
+//        
+//    }
+    
     [self adjustContentFrameAccordingToMenuVisibility];
     [self.viewControllers[0] didMoveToParentViewController:self];
     self.menu.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.menu.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    
+    [self showCenterViewWithShadow:NO withOffset:0];
+    
+    
 }
-
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    self.menu.hidden=NO;
+//    self.userImage.hidden=NO;
+//   
+//}
 - (void)toggleMenuVisibility:(id)sender
 {
     self.isMenuVisible = !self.isMenuVisible;
@@ -108,14 +130,14 @@
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     [self transitionFromViewController:outgoingViewController
                       toViewController:incomingViewController
-                              duration:0.1 options:0
+                              duration:0.2 options:0
                             animations:^{
                                 outgoingViewController.view.frame = [self offScreenFrame];
                                 
                             }
      
                             completion:^(BOOL finished) {
-                                [UIView animateWithDuration:0.1
+                                [UIView animateWithDuration:0.2
                                                  animations:^{
                                                      [outgoingViewController.view removeFromSuperview];
                                                      [self.view addSubview:incomingViewController.view];
@@ -127,6 +149,7 @@
                                 self.isMenuVisible = NO;
                                 self.indexOfVisibleController = index;
                             }];
+   
 }
 
 - (void)showCenterViewWithShadow:(BOOL)value withOffset:(double)offset

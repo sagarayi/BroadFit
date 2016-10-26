@@ -17,12 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.title = @"MY CHALLENGES";
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     NSString *userID = [FIRAuth auth].currentUser.uid;
     [connectionHandler fetchMyChallenges:userID];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    float rd = 30.00/255.00;
+    float gr = 164.00/255.00;
+    float bl = 176.00/255.00;
+   
+//    self.navigationController.navigationBar.barStyle=UIBarStyleOp;
+//    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
     
     //ADD ACTIVITY INDICATOR
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -34,8 +46,7 @@
 }
 
 - (void) didFetchChallenges:(NSDictionary *)challenges{
-    NSDictionary *challengesEnrolled = [challenges objectForKey:@"challenges enrolled"];
-    if(challengesEnrolled == NULL || [challengesEnrolled isKindOfClass:[NSNull class]]){
+    if(challenges == NULL || [challenges isKindOfClass:[NSNull class]]){
         
         UIAlertController *noEventsAlert = [UIAlertController
                                     alertControllerWithTitle:@"NO CHALLENGES"
@@ -48,7 +59,7 @@
                                 {
                                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
                                     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                    [self presentViewController:viewController animated:YES completion:nil];
+                                    [self presentViewController:viewController animated:NO completion:nil];
                                 }];
         [noEventsAlert addAction:okButton];
         [self presentViewController:noEventsAlert animated:YES completion:nil];
@@ -72,8 +83,9 @@
     [super viewWillDisappear:animated];
 }
 - (void) viewDidAppear:(BOOL)animated{
-    
+    [[[self.navigationController navigationBar] topItem] setTitle:@"My Challenges"];
     self.tabBarController.tabBar.hidden = NO;
+    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -143,7 +155,7 @@
                                        {
                                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
                                            UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                           [self presentViewController:viewController animated:YES completion:nil];
+                                           [self presentViewController:viewController animated:NO completion:nil];
                                        }];
             [noEventsAlert addAction:okButton];
             [self presentViewController:noEventsAlert animated:YES completion:nil];

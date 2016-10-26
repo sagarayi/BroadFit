@@ -26,6 +26,7 @@
     ConnectionHandler *connection=[[ConnectionHandler alloc]init];
     connection.delegate=self;
     [connection isAdmin:[[NSUserDefaults standardUserDefaults] objectForKey:@"userID"]];
+    [[[self.navigationController navigationBar] topItem] setHidesBackButton:YES];
     
 }
 

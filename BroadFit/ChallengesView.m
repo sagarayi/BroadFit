@@ -20,13 +20,16 @@
     [super viewDidLoad];
     self.tableView.tableFooterView=[[UIView alloc]initWithFrame:CGRectZero];
     [self.joinButton setHidden:YES];
-    self.navigationController.title = @"ALL CHALLENGES";
+    
+    
+    [[[self.navigationController navigationBar] topItem] setHidesBackButton:YES];
+    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
     //FETCH ALL CHALLENGES
     ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     _EventName = @"Summer Challenges";
     [connectionHandler fetchAllChallenges:_EventName];
-    
+//    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     //ADD ACTIVITY INDICATOR
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -40,6 +43,12 @@
 - (void) viewDidAppear:(BOOL)animated{
     
     self.tabBarController.tabBar.hidden = NO;
+    [[[self.navigationController navigationBar] topItem] setTitle:@"Challenges"];
+//    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+//    [[self.navigationController navigationBar] setBackgroundImage:[UIImage imageNamed:@"background-nav"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning {

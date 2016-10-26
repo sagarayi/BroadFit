@@ -121,7 +121,7 @@
                                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
                                        UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                       [self presentViewController:viewController animated:YES completion:nil];
+                                       [self.navigationController pushViewController:viewController animated:NO];
 
         }];
         [noParticipantsAlert addAction:okButton];
