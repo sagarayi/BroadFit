@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuartzCore/QuartzCore.h"
 
 @interface AllParticipantsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 @property (strong,nonatomic) NSString *eventName;

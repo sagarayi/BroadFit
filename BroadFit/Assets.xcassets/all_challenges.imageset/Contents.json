@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "all_challenges@2x-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "all_challenges@3x-1.png",
       "scale" : "3x"
     }
   ],

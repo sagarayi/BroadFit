@@ -22,18 +22,17 @@
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
     _usernameTextField.delegate=self;
     _passwordTextField.delegate=self;
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"WalkingDetails"];
 }
-//-(void)viewDidAppear:(BOOL)animated
-//{
-//    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
-//    {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-//        UIViewController * challengesViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-//        
-//        [self presentViewController:challengesViewController animated:YES completion:nil];
-//        
-//    }
-//}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = TRUE;
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = FALSE;
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     UIResponder *nextResponder=[textField.superview viewWithTag:101];
@@ -68,8 +67,7 @@
                            @"emailID" : _usernameTextField.text,
                            @"password" : _passwordTextField.text
                            };
-    
-    ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
+    FirebaseConnectionHandler *connectionHandler = [FirebaseConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     [connectionHandler signInWithData:user];
 
@@ -79,47 +77,35 @@
     [self signInUser];
    
 }
-
 // Delegate returned by connection handler, indicating failure during sign In Process
-
 - (void) signInFailed:(NSString *)error{
     
-    UIAlertController *alert = [UIAlertController
+    UIAlertController *loginFailedAlert = [UIAlertController
                                 alertControllerWithTitle:@"LOGIN FAILED"
                                 message:error
                                 preferredStyle:UIAlertControllerStyleAlert
                                 ];
-    UIAlertAction *addOK = [UIAlertAction
+    UIAlertAction *okButton = [UIAlertAction
                             actionWithTitle:@"OK"
                             style:UIAlertActionStyleDefault
                             handler:^(UIAlertAction *action) {}
                             ];
-    [alert addAction:addOK];
+    [loginFailedAlert addAction:okButton];
     [_activityIndicator stopAnimating];
-    [self presentViewController:alert animated:YES completion:nil];
-    
-    
+    [self presentViewController:loginFailedAlert animated:YES completion:nil];
     
 }
-
 // Delegate returned by connection handler, indicating success during sign In Process
-
 - (void) signInSuccessful{
     [_activityIndicator stopAnimating];
     NSString *userID = [FIRAuth auth].currentUser.uid;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:userID forKey:@"userID"];
     [defaults synchronize];
-    NSString *username = [[_usernameTextField.text componentsSeparatedByString:@"@"] objectAtIndex:0];
-    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
-
-    
-                                
+//    [[NSUserDefaults standardUserDefaults] setObject:_username forKey:@"username"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-    [self presentViewController:viewController animated:YES completion:nil];
-
-    
-    
+    [self.navigationController pushViewController:viewController animated:NO];
 }
+
 @end

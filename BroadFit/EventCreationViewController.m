@@ -24,21 +24,22 @@
     _endingDate=@"";
     _numberOfChallenges=0;
     _eventName.delegate=self;
+    _startDateButton.layer.cornerRadius = 15;
+    _endDateButton.layer.cornerRadius = 15;
+    _resetButton.layer.cornerRadius = 15;
+    _createButton.layer.cornerRadius = 15;
     _challengesSelected=[[NSMutableArray alloc]init];
     self.challengesChooser.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.challengesChooser.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
     _imageList=@[@"drinking",@"eating",@"sleeping",@"walking"];
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicator.alpha = 1.0;
-//    _activityIndicator.center = CGPointMake(self.view.frame.size.width-50, self.view.frame.size.height-50);
-    
     [self.challengesChooser addSubview:_activityIndicator];
-    ConnectionHandler *connection=[[ConnectionHandler alloc]init];
+    FirebaseConnectionHandler *connection=[[FirebaseConnectionHandler alloc]init];
     connection.delegate=self;
     [connection fetchListOfChallenges];
     [_activityIndicator startAnimating];
     [connection fetchImages];
-    // Do any additional setup after loading the view.
 }
 
 -(void)didFinishFetchingChallenges:(NSDictionary*)listOfChallenges
@@ -52,7 +53,6 @@
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
     [textField resignFirstResponder];
     return YES;
 }
@@ -158,7 +158,7 @@
     }
     else
     {
-        ConnectionHandler *connection=[[ConnectionHandler alloc]init];
+        FirebaseConnectionHandler *connection=[[FirebaseConnectionHandler alloc]init];
         connection.delegate=self;
         [connection addEventDetails:_eventName.text containing:_challengesSelected from:_startingDate till:_endingDate with:_imageList and:_challengeId];
         alert.title=@"Success";
@@ -209,8 +209,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.imageView.image=_tickImage;
-        
-        
     }
     cell.textLabel.text = _challengeNames[indexPath.row];
     cell.imageView.hidden=_hideImage;
@@ -238,18 +236,6 @@
     }
     
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 - (IBAction)resetButton:(id)sender
 {

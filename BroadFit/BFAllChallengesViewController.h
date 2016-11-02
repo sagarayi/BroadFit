@@ -1,0 +1,36 @@
+//
+//  ChallengesView.h
+//  BroadFit
+//
+//  Created by Shrinidhi Kodandoor on 05/10/16.
+//  Copyright © 2016 Broadsoft. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "FirebaseConnectionHandler.h"
+#import "TableCell.h"
+
+@interface BFAllChallengesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UITabBarControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *enrollButton;
+@property (weak, nonatomic) IBOutlet UILabel *enrollToEventLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *challengeCellImage;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *challengeImage;
+@property (weak, nonatomic) IBOutlet UIButton *joinButton;
+@property (strong,nonatomic) NSDictionary *challenges;
+@property (weak, nonatomic) NSString *challengeCellTitle;
+@property UIView *menuView;
+@property UIActivityIndicatorView *activityIndicator;
+@property NSString *individualChallengeSelected;
+@property NSString *EventName;
+@property BOOL eventAvailabilityStatus;
+@ property NSString * participantCount;
+@property NSString *participantsTemp;
+- (IBAction)enrollButton:(id)sender;
+- (IBAction)join:(id)sender;
+- (void) challengesRecieved:(NSDictionary *)challenges;
+- (void) didRecieveActiveEvent:(NSString *)activeEvent;
+- (void) didRecieveEventAvailability:(BOOL)status;
+- (void) userHasNotEnrolled:(BOOL)status;
+
+@end

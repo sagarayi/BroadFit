@@ -14,6 +14,5 @@
 @property UIActivityIndicatorView *activityIndicator;
 @property (strong,nonatomic) NSArray *myChallenges;
 - (IBAction)getChallengeDetails:(id)sender;
-
 - (void) didFetchChallenges:(NSDictionary *)challenges;
 @end

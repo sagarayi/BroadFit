@@ -17,7 +17,6 @@
 - (void) signInWithData:(NSDictionary *)user;
 - (void) fetchMyChallenges:(NSString *)userID;
 
-
 @end
 
 #endif /* Protocol_h */

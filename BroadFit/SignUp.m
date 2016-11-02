@@ -19,17 +19,25 @@
     _usernameTextField.delegate=self;
     _emailIdTextField.delegate=self;
     _passwordTextField.delegate=self;
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _activityIndicator.alpha = 2.0;
+    _activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = TRUE;
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = FALSE;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSInteger nextTag=textField.tag+1;
-//    UIResponder *nextResponder=
-    
-
     if(textField.tag == 1000)
     {
         [[textField.superview viewWithTag:1001] becomeFirstResponder];
@@ -44,23 +52,8 @@
         [textField resignFirstResponder];
         [self signUpUser];
     }
-    
-    
     return YES;
 }
-
-
-//- (void) viewDidAppear:(BOOL)animated{
-//    
-//    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
-//    {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-//        UIViewController * challengesViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-//        [self presentViewController:challengesViewController animated:YES completion:nil];
-//        
-//    }
-//}
-
 // Call the connection handler to signUp the user
 -(void)signUpUser
 {
@@ -69,64 +62,44 @@
                            @"password" : _passwordTextField.text,
                            @"username" : _usernameTextField.text
                            };
-    ConnectionHandler *connectionHandler = [ConnectionHandler sharedInstance];
+    FirebaseConnectionHandler *connectionHandler = [FirebaseConnectionHandler sharedInstance];
     connectionHandler.delegate = self;
     [connectionHandler signUpWithData:user];
 
 }
 - (IBAction)signUp:(id)sender {
- 
+    [_activityIndicator startAnimating];
+    [self.view addSubview:_activityIndicator];
     [self signUpUser];
 }
-
-
 // Delegate returned by connection handler indicating signUp failed
 
 - (void) failedToSignUp:(NSString *)error{
     
-    UIAlertController *alert = [UIAlertController
+    UIAlertController *signUpFailAlert = [UIAlertController
                                 alertControllerWithTitle:@"SIGNUP FAILED"
                                 message:error
                                 preferredStyle:UIAlertControllerStyleAlert
                                 ];
-    UIAlertAction *addOK = [UIAlertAction
+    UIAlertAction *okButton = [UIAlertAction
                             actionWithTitle:@"OK"
                             style:UIAlertActionStyleDefault
                             handler:^(UIAlertAction *action) {}
                             ];
-    [alert addAction:addOK];
-    [self presentViewController:alert animated:YES completion:nil];
+    [signUpFailAlert addAction:okButton];
+    [self presentViewController:signUpFailAlert animated:YES completion:nil];
     
 }
 
 // Delegate returned by connection handler indicationg login successful, sign In the user automatically
 
 - (void) signUpSuccessful{
-    
-//    NSString *username = [[_emailIdTextField.text componentsSeparatedByString:@"@"] objectAtIndex:0];
-    [[NSUserDefaults standardUserDefaults] setObject:_usernameTextField.text forKey:@"UserName"];
-    UIAlertController *alert = [UIAlertController
-                                alertControllerWithTitle:@"SIGNUP SUCCESSFUL"
-                                message:@"Welcome"
-                                preferredStyle:UIAlertControllerStyleAlert
-                                ];
-    UIAlertAction *addOK = [UIAlertAction
-                            actionWithTitle:@"OK"
-                            style:UIAlertActionStyleDefault
-                            handler:^(UIAlertAction *action)
-                            {
-                                
-                                [[NSUserDefaults standardUserDefaults] setObject:[FIRAuth auth].currentUser.uid forKey:@"UserID"];
-                                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-                                UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-                                [self presentViewController:viewController animated:YES completion:nil];
-                                
-
-                            }];
-    [alert addAction:addOK];
-    [self presentViewController:alert animated:YES completion:nil];
-
-   
+    [_activityIndicator stopAnimating];
+    [[NSUserDefaults standardUserDefaults] setObject:[FIRAuth auth].currentUser.uid forKey:@"userID"];
+    [[NSUserDefaults standardUserDefaults] setObject:_usernameTextField.text forKey:@"username"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    UIViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
+    [self.navigationController pushViewController:viewController animated:NO];
 }
 
 

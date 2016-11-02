@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Firebase/Firebase.h"
-#import "ChallengesView.h"
+#import "BFTabBarController.h"
+#import "BFAllChallengesViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,15 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FIRApp configure];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"background-nav"]
+                                       forBarMetrics:UIBarMetricsDefault];
 
-//    if([[NSUserDefaults standardUserDefaults]objectForKey:@"userID"] != nil)
-//    {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-//        UIViewController * challengesViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChallengesController"];
-//        self.window.rootViewController = challengesViewController;
-//        
-//    }
-
+  
     return YES;
 }
 

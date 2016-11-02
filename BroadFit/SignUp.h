@@ -8,16 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Firebase/Firebase.h"
-#import "ConnectionHandler.h"
+#import "FirebaseConnectionHandler.h"
 #import "Protocol.h"
 @interface SignUp : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailIdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-
+@property UIActivityIndicatorView *activityIndicator;
 - (IBAction)signUp:(id)sender;
-
 - (void) failedToSignUp:(NSString *)error;
 - (void) signUpSuccessful;
 

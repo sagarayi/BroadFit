@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConnectionHandler.h"
+#import "FirebaseConnectionHandler.h"
+#import "QuartzCore/QuartzCore.h"
 @interface EventCreationViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *eventName;
 @property (weak, nonatomic) IBOutlet UITableView *challengesChooser;
 @property (weak, nonatomic) IBOutlet UIButton *startDateButton;
 @property (weak, nonatomic) IBOutlet UIButton *endDateButton;
 @property UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
 
 
 @property UIImage *tickImage;
